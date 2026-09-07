@@ -1,95 +1,190 @@
-* {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
+/* =======================================================
+   SKILLSWAP COURSES HUB & TEACH MODE DESIGN SYSTEM
+   ======================================================= */
 
-body {
-    margin: 0;
-    background: #f4efe6;
-    padding: 30px;
-}
-
-.courses-container {
-    max-width: 1100px;
-    margin: auto;
-}
-
-/* HEADER */
-.header {
-    margin-bottom: 20px;
-}
-
-.header p {
-    color: #555;
-}
-
-/* MODE SELECT */
-.mode-select {
+.mode-select-container {
     display: flex;
-    gap: 12px;
-    margin-bottom: 30px;
+    justify-content: center;
+    margin-bottom: 28px;
 }
 
-.mode-select button {
-    padding: 10px 24px;
-    border-radius: 20px;
-    border: 1px solid #ccc;
-    background: #fff;
+.mode-toggle {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    padding: 6px;
+    border-radius: 36px;
+    display: flex;
+    gap: 8px;
+    box-shadow: var(--shadow-sm);
+}
+
+.mode-btn {
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    padding: 12px 28px;
+    border-radius: 28px;
+    font-weight: 800;
+    font-size: 15px;
     cursor: pointer;
-    font-weight: 600;
-}
-
-.mode-select button.active {
-    background: #f1c97a;
-    border-color: transparent;
-}
-
-/* COURSES GRID */
-.courses-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-    gap: 20px;
-}
-
-/* COURSE CARD */
-.course-card {
-    background: #faf7f1;
-    padding: 20px;
-    border-radius: 18px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-
-    /* 🔑 KEY FIX */
+    transition: all 0.25s ease;
     display: flex;
-    flex-direction: column;
-    min-height: 240px;
+    align-items: center;
+    gap: 8px;
 }
 
-.course-card h3 {
-    margin-top: 0;
+.mode-btn.active {
+    background: var(--gradient-primary);
+    color: white;
+    box-shadow: var(--shadow-glow);
 }
 
-.course-card p {
+/* Teach Mode Hero Banner */
+.teach-mode-banner {
+    background: var(--gradient-card);
+    border: 1px solid var(--border-highlight);
+    border-radius: var(--radius-lg);
+    padding: 24px 30px;
+    margin-bottom: 28px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+    box-shadow: var(--shadow-md);
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-8px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.teach-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+
+.teach-banner-icon {
+    font-size: 40px;
+    background: rgba(214, 183, 124, 0.15);
+    padding: 12px;
+    border-radius: 16px;
+    border: 1px solid var(--border-color);
+}
+
+.teach-banner-text h2 {
+    font-size: 20px;
+    font-weight: 800;
+    color: var(--text-primary);
+    margin-bottom: 4px;
+}
+
+.teach-banner-text p {
     font-size: 14px;
-    color: #555;
+    color: var(--text-secondary);
+    line-height: 1.5;
 }
 
-/* ACTIONS — ALWAYS AT BOTTOM */
+.teach-action-btn {
+    background: var(--gradient-primary);
+    color: white;
+    text-decoration: none;
+    font-weight: 800;
+    font-size: 14px;
+    padding: 14px 22px;
+    border-radius: 30px;
+    box-shadow: var(--shadow-glow);
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.teach-action-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(214, 183, 124, 0.45);
+}
+
+/* Enhanced Course Card Layout & Typography (Larger & Clearer) */
+.card {
+    padding: 28px !important;
+    gap: 24px !important;
+    border-radius: var(--radius-lg) !important;
+}
+
+.tech-icon-wrapper {
+    width: 62px !important;
+    height: 62px !important;
+    font-size: 32px !important;
+    border-radius: 16px !important;
+}
+
+.card-title-area h3 {
+    font-size: 22px !important;
+    font-weight: 800 !important;
+    line-height: 1.35 !important;
+    color: var(--text-primary) !important;
+}
+
+.card-title-area p {
+    font-size: 16px !important;
+    line-height: 1.6 !important;
+    color: var(--text-secondary) !important;
+    margin-top: 8px !important;
+}
+
+.partner-label {
+    font-size: 13px !important;
+    letter-spacing: 0.8px !important;
+    font-weight: 700 !important;
+    color: var(--text-muted) !important;
+}
+
+.partner-name {
+    font-size: 17px !important;
+    font-weight: 800 !important;
+    color: var(--accent-indigo) !important;
+    margin-top: 4px !important;
+}
+
 .course-actions {
     display: flex;
     gap: 12px;
-    margin-top: auto; /* 🔥 pushes buttons to bottom */
+    width: 100%;
 }
 
-.course-actions button {
+.course-btn {
     flex: 1;
-    padding: 10px;
-    border-radius: 14px;
-    border: 1px solid #ccc;
-    background: #fff;
+    padding: 14px 22px !important;
+    border-radius: var(--radius-md) !important;
+    font-size: 16px !important;
+    font-weight: 800 !important;
+    border: 1px solid var(--border-color);
+    background: var(--bg-card);
+    color: var(--text-primary);
     cursor: pointer;
-    font-size: 13px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    transition: all 0.2s ease;
 }
 
-.course-actions button:hover {
-    background: #f1ddb5;
+.course-btn:hover {
+    border-color: var(--accent-indigo);
+    background: rgba(214, 183, 124, 0.15);
+    transform: translateY(-2px);
+}
+
+.teach-btn-active {
+    background: var(--gradient-primary) !important;
+    color: white !important;
+    border-color: transparent !important;
+    box-shadow: var(--shadow-glow);
 }

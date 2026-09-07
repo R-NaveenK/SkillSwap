@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TypeScript Essentials Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>TypeScript Essentials – Static Typing & Generics</h1>
+        <p>Master Type Inference, Interfaces, Unions, Generics, Utility Types & Strict Compiler Safety</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Deepak</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>7 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Static Type System & Annotations</h2>
+    <p>TypeScript adds static typing to JavaScript, detecting type errors at compile-time before code reaches production environments.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>types.ts</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>interface SwapperUser {
+    id: string;
+    username: string;
+    points: number;
+    role?: 'Learner' | 'Mentor' | 'Admin'; // Union literal type
+}
+
+function processPointBonus(user: SwapperUser, delta: number): SwapperUser {
+    return {
+        ...user,
+        points: user.points + delta
+    };
+}
+
+const activeUser: SwapperUser = { id: 'u1', username: 'Naveen', points: 120 };
+console.log(processPointBonus(activeUser, 30));</code></pre>
+    </div>
+
+    <h2>2. Generic Functions & Interfaces</h2>
+    <p><strong>Generics</strong> allow you to write reusable, type-safe components that operate over a variety of types rather than a single fixed type.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>generics.ts</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>interface APIResponse&lt;T&gt; {
+    status: number;
+    data: T;
+    timestamp: string;
+}
+
+// Reusable generic fetch wrapper preserving exact return types
+async function fetchAPI&lt;T&gt;(url: string): Promise&lt;APIResponse&lt;T&gt;&gt; {
+    const res = await fetch(url);
+    const data: T = await res.json();
+    return { status: res.status, data, timestamp: new Date().toISOString() };
+}</code></pre>
+    </div>
+
+    <h2>3. Built-In Utility Types</h2>
+    <p>TypeScript provides powerful built-in utility types to transform existing types: <code>Partial&lt;T&gt;</code>, <code>Readonly&lt;T&gt;</code>, <code>Pick&lt;T, K&gt;</code>, and <code>Record&lt;K, T&gt;</code>.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which utility type makes all properties of an object type optional?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="true">A) Partial&lt;T&gt;</button>
+            <button class="quiz-option-btn" data-correct="false">B) Required&lt;T&gt;</button>
+            <button class="quiz-option-btn" data-correct="false">C) Readonly&lt;T&gt;</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

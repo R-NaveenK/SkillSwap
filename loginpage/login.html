@@ -1,28 +1,50 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Login | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
     <link rel="stylesheet" href="login.css">
 </head>
-<body>
+<body class="light-mode" style="display: flex; align-items: center; justify-content: center; min-height: 100vh; background: var(--bg-main);">
 
 <div class="login-wrapper">
     <div class="login-card">
-        <h2>Welcome Back 👋</h2>
-        <p>Login to continue learning & teaching</p>
+        <div style="display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 16px;">
+            <div class="logo-icon">SS</div>
+            <span class="logo-text" style="font-size: 26px;">SkillSwap</span>
+        </div>
 
-        <input type="email" id="email" placeholder="Email address" required>
-        <input type="password" id="password" placeholder="Password" required>
+        <h2>Welcome Back</h2>
+        <p style="color: var(--text-secondary); font-size: 14px; margin-bottom: 24px;">Login to exchange skills, earn points, and collaborate with peers</p>
 
-        <button type="button" onclick="login()">Login</button>
+        <form id="loginForm" style="display: flex; flex-direction: column; gap: 16px;">
+            <input type="text" id="email" class="form-input" placeholder="Username or Email address" required>
+            <div style="position: relative; width: 100%;">
+                <input type="password" id="password" class="form-input" placeholder="Password" required style="padding-right: 60px;">
+                <button type="button" id="togglePwd" style="position: absolute; right: 12px; top: 50%; transform: translateY(-50%); background: transparent; border: none; cursor: pointer; font-size: 12px; font-weight: 700; color: var(--text-secondary);" title="Toggle password visibility">SHOW</button>
+            </div>
 
-        <p class="signup-text">
-            New to SkillSwap? <a href="../signup/signup.html">Create an account</a>
+            <button type="submit" class="action-btn" style="padding: 14px; font-size: 15px; margin-top: 8px;">Login to Account</button>
+        </form>
+
+        <div style="margin-top: 24px; padding-top: 18px; border-top: 1px solid var(--border-color); text-align: center;">
+            <span style="font-size: 12px; color: var(--text-secondary); text-transform: uppercase; letter-spacing: 0.5px; font-weight: 700;">Quick Demo Profiles</span>
+            <div style="display: flex; gap: 8px; justify-content: center; margin-top: 10px; flex-wrap: wrap;">
+                <button type="button" class="tag demo-btn" data-user="Naveen" data-avatar="N" style="cursor: pointer; padding: 6px 12px; font-size: 12px;">Naveen (Full-Stack)</button>
+                <button type="button" class="tag demo-btn" data-user="Ananya Rao" data-avatar="A" style="cursor: pointer; padding: 6px 12px; font-size: 12px;">Ananya (AI/ML)</button>
+                <button type="button" class="tag demo-btn" data-user="Marcus Vance" data-avatar="M" style="cursor: pointer; padding: 6px 12px; font-size: 12px;">Marcus (Design)</button>
+            </div>
+        </div>
+
+        <p class="signup-text" style="margin-top: 20px; font-size: 14px; color: var(--text-secondary); text-align: center;">
+            New to SkillSwap? <a href="../signup/signup.html" style="color: var(--text-primary); font-weight: 700; text-decoration: underline;">Create an account</a>
         </p>
     </div>
 </div>
 
+<script src="../front/app-state.js"></script>
 <script src="login.js"></script>
 </body>
 </html>

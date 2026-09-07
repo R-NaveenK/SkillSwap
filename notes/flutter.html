@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flutter & Dart Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Flutter & Dart App Dev – Cross-Platform Apps</h1>
+        <p>Master Dart Null Safety, Widget Trees, Provider State Management & Native Mobile Deployments</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Rahul</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Everything is a Widget in Flutter</h2>
+    <p>Flutter builds high-performance iOS and Android user interfaces by rendering declarative widget trees via Skia / Impeller graphics engines.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>main.dart</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>import 'package:flutter/material.dart';
+
+void main() =&gt; runApp(const SkillSwapApp());
+
+class SkillSwapApp extends StatelessWidget {
+  const SkillSwapApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'SkillSwap Mobile',
+      theme: ThemeData.dark(),
+      home: Scaffold(
+        appBar: AppBar(title: const Text('SkillSwap Mobile')),
+        body: const Center(
+          child: Text('Welcome to Peer Learning!', style: TextStyle(fontSize: 20)),
+        ),
+      ),
+    );
+  }
+}</code></pre>
+    </div>
+
+    <h2>2. State Management: Provider & Riverpod</h2>
+    <p>State management decouples app business logic from rendering UI widgets. Provider uses InheritedWidget under the hood to propagate state changes down the widget tree efficiently.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which graphics engine does Flutter compile down to for native 60+ FPS rendering?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) WebKit Engine</button>
+            <button class="quiz-option-btn" data-correct="true">B) Impeller / Skia Engine</button>
+            <button class="quiz-option-btn" data-correct="false">C) React Native Bridge</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

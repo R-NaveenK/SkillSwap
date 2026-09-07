@@ -1,107 +1,180 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="signature">
 <head>
     <meta charset="UTF-8">
-    <title>Projects | SkillSwap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects Collaboration | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
     <link rel="stylesheet" href="../buttons-css/projects.css">
 </head>
-<body>
+<body class="signature-mode">
 
-<div class="projects-container">
+<div class="app">
 
-    <!-- HEADER -->
-    <div class="header">
-        <h2>Projects</h2>
-        <div class="points">⭐ Earn points by completing projects</div>
-    </div>
+    <!-- UNIFIED SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <a href="../front/front.html" class="logo-container">
+                <div class="logo-icon">SS</div>
+                <span class="logo-text">SkillSwap</span>
+            </a>
 
-    <!-- MAIN OPTIONS -->
-    <div class="options">
-
-        <div class="option-card">
-            <h3>Work on a Project</h3>
-            <p>
-                Choose a project, apply your skills, finish it and earn points.
-            </p>
-            <button>Browse Projects</button>
+            <nav class="nav-menu">
+                <a href="../front/front.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+                <a href="projects.html" class="nav-item active">
+                    <span>Projects</span>
+                </a>
+                <a href="post.html" class="nav-item">
+                    <span>Post Skill</span>
+                </a>
+                <a href="pin.html" class="nav-item">
+                    <span>Bookmarks</span>
+                    <span class="nav-badge" id="sidebarPinCount">0</span>
+                </a>
+                <a href="ai.html" class="nav-item">
+                    <span>AI Assistant</span>
+                    <span class="nav-badge" style="background: var(--accent-rose); color: var(--text-primary); font-weight: 800;">LIVE</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <span>Support Center</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <span>Sign Out</span>
+                </a>
+            </nav>
         </div>
 
-        <div class="option-card highlight">
-            <h3>Post Your Project</h3>
-            <p>
-                Created something? Post it here and let others collaborate.
-            </p>
-            <button>Post a Project</button>
+        <div class="sidebar-user-card">
+            <div class="user-avatar" id="userAvatar">N</div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Naveen</span>
+                <span class="user-points-badge"><span id="sidebarPoints">120</span> Points</span>
+            </div>
         </div>
+    </aside>
 
-    </div>
+    <!-- MAIN CONTENT -->
+    <main class="main">
 
-    <!-- AVAILABLE PROJECTS -->
-    <h3 class="section-title">Available Projects</h3>
+        <header class="topbar">
+            <div class="header-title-group">
+                <h1>Projects Collaboration Hub</h1>
+                <p>Build software initiatives with peer partners, contribute code, and earn milestone points.</p>
+            </div>
 
-    <div class="project-grid">
+            <div class="topbar-actions">
+                <div class="points-pill">
+                    <span id="pointsValue">120 Points</span>
+                </div>
+            </div>
+        </header>
 
-        <div class="project-card">
-            <h4>Portfolio Website</h4>
-            <p>Build a personal portfolio using HTML & CSS.</p>
-            <div class="project-footer">
-                <span>⭐ 50 points</span>
-                <button>Join</button>
+        <!-- ACTION BANNER CARDS -->
+        <div class="project-action-banners">
+            <div class="action-card">
+                <h3>Collaborative Engineering Teams</h3>
+                <p>Apply technical expertise, join active engineering teams, and claim milestone bounties upon completion.</p>
+                <button class="action-btn" id="browseScrollBtn">Explore Active Projects</button>
+            </div>
+
+            <div class="action-card highlight">
+                <h3>Launch a Project Initiative</h3>
+                <p>Need developers or designers? Publish your technical specification to the collaboration board.</p>
+                <button class="action-btn" id="postProjectModalBtn" style="background: var(--accent-rose); color: var(--text-primary);">+ Post New Project (+20 Pts)</button>
             </div>
         </div>
 
-        <div class="project-card">
-            <h4>Expense Tracker</h4>
-            <p>Create a simple expense tracker using JavaScript.</p>
-            <div class="project-footer">
-                <span>⭐ 80 points</span>
-                <button>Join</button>
-            </div>
+        <!-- CATEGORY FILTER -->
+        <div class="category-pills" id="projectCategoryPills" style="margin-bottom: 24px;">
+            <button class="category-pill active" data-category="all">All Projects</button>
+            <button class="category-pill" data-category="AI/ML">AI & Machine Learning</button>
+            <button class="category-pill" data-category="Web">Web Engineering</button>
+            <button class="category-pill" data-category="App">Applications</button>
+            <button class="category-pill" data-category="Design">Product & UI Design</button>
+            <button class="category-pill" data-category="Backend">Backend & Security</button>
         </div>
 
-        <div class="project-card">
-            <h4>UI Redesign</h4>
-            <p>Redesign a mobile app UI using Figma.</p>
-            <div class="project-footer">
-                <span>⭐ 150 points</span>
-                <button>Join</button>
-            </div>
+        <div class="section-header">
+            <h2 class="section-title">Active Projects</h2>
         </div>
 
-                <div class="project-card">
-            <h4>Countries Encyclopedia</h4>
-            <p>Create a simple Countries Encyclopedia using HTML & CSS.</p>
-            <div class="project-footer">
-                <span>⭐ 60 points</span>
-                <button>Join</button>
-            </div>
+        <!-- PROJECTS GRID -->
+        <div class="grid" id="projectsGrid">
+            <!-- Dynamically Rendered -->
         </div>
 
-                <div class="project-card">
-            <h4>To-Do List</h4>
-            <p>Create a simple To Do list using JavaScript</p>
-            <div class="project-footer">
-                <span>⭐ 40 points</span>
-                <button>Join</button>
-            </div>
-        </div>
-
-                <div class="project-card">
-            <h4>HTML login page</h4>
-            <p>Create a simple Login page using HTML.</p>
-            <div class="project-footer">
-                <span>⭐ 100 points</span>
-                <button>Join</button>
-            </div>
-        </div>
-
-
-    </div>
-
+    </main>
 </div>
-<script src="../buttons-js/pojects.js"></script>
+
+<!-- POST PROJECT MODAL -->
+<div class="modal-overlay" id="projectModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 style="font-size: 19px; font-weight: 800;">Post a Collaboration Project</h3>
+            <button class="modal-close" id="closeProjectModal">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="createProjectForm" style="display: flex; flex-direction: column; gap: 16px;">
+                <div>
+                    <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Project Title</label>
+                    <input type="text" id="newProjTitle" class="search-input" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px; width: 100%;" placeholder="e.g. AI-Powered Resume Screener" required>
+                </div>
+
+                <div>
+                    <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Category</label>
+                    <select id="newProjCategory" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px; color: var(--text-primary); width: 100%; outline: none;">
+                        <option value="AI/ML">AI & Machine Learning</option>
+                        <option value="Web">Web Engineering</option>
+                        <option value="App">Applications</option>
+                        <option value="Design">Product & UI Design</option>
+                        <option value="Backend">Backend & Security</option>
+                    </select>
+                </div>
+
+                <div>
+                    <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Description & Requirements</label>
+                    <textarea id="newProjDesc" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px; color: var(--text-primary); min-height: 90px; width: 100%; outline: none; font-size: 14px;" placeholder="Detail project architecture, goals, and required peer skills..." required></textarea>
+                </div>
+
+                <div>
+                    <label style="font-size: 13px; font-weight: 700; display: block; margin-bottom: 6px;">Reward Points Bounty (20–300 Pts)</label>
+                    <input type="number" id="newProjPoints" class="search-input" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px; width: 100%;" value="80" min="20" max="300" required>
+                </div>
+
+                <button type="submit" class="action-btn" style="padding: 14px; font-size: 15px; margin-top: 6px;">Publish Project (+20 Pts)</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+<!-- SUBMIT CONTRIBUTION MODAL -->
+<div class="modal-overlay" id="contributeModal">
+    <div class="modal-card">
+        <div class="modal-header">
+            <h3 id="contributeProjectTitle" style="font-size: 19px; font-weight: 800;">Submit Project Milestone</h3>
+            <button class="modal-close" id="closeContributeModal">&times;</button>
+        </div>
+        <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+            <p style="font-size: 14px; color: var(--text-secondary);">Submit your GitHub repository, pull request, or milestone deliverables to claim points bounty.</p>
+            
+            <input type="text" id="contribRepoLink" class="search-input" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px;" placeholder="Repository URL (e.g. github.com/organization/repo)" required>
+            
+            <textarea id="contribNotes" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 12px; border-radius: 10px; color: var(--text-primary); min-height: 80px; outline: none;" placeholder="Summary of architecture or features implemented..."></textarea>
+            
+            <button id="submitContribBtn" class="action-btn" style="padding: 14px; font-size: 15px;">
+                Submit & Claim Points Bounty
+            </button>
+        </div>
+    </div>
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="../buttons-js/projects.js"></script>
 </body>
 </html>
-
-
 

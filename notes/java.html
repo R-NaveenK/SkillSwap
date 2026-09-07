@@ -1,253 +1,120 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<title>Java Programming Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Java Development Notes | SkillSwap</title>
 <link rel="stylesheet" href="notes.css">
 </head>
-<body>
+<body class="notes-body light-mode">
 
-<div class="container">
+<div class="notes-container">
 
-<h1>Java Programming – Detailed Notes</h1>
-
-<h2>1. Introduction to Java</h2>
-<p>
-Java is a high-level, object-oriented programming language developed by Sun Microsystems
-and released in 1995. It was designed with the philosophy of
-<b>Write Once, Run Anywhere (WORA)</b>, meaning compiled Java code can run on all platforms
-that support Java without recompilation.
-</p>
-
-<p>
-Java is widely used in enterprise applications, mobile applications (Android),
-web servers, desktop applications, and embedded systems.
-</p>
-
-<h2>2. History of Java</h2>
-<p>
-Java was originally developed by James Gosling and his team at Sun Microsystems.
-Initially named Oak, it was later renamed Java.
-</p>
-
-<ul>
-<li>1991 – Project started (Oak)</li>
-<li>1995 – Java officially released</li>
-<li>2009 – Oracle acquired Sun Microsystems</li>
-<li>Present – Java continues as a leading programming language</li>
-</ul>
-
-<h2>3. Features of Java</h2>
-<ul>
-<li>Simple</li>
-<li>Object-Oriented</li>
-<li>Platform Independent</li>
-<li>Secure</li>
-<li>Robust</li>
-<li>Multithreaded</li>
-<li>Portable</li>
-<li>High Performance</li>
-<li>Distributed</li>
-</ul>
-
-<h2>4. Java Architecture</h2>
-<p>
-Java works using the following components:
-</p>
-<ul>
-<li>Java Source Code (.java)</li>
-<li>Java Compiler (javac)</li>
-<li>Bytecode (.class)</li>
-<li>Java Virtual Machine (JVM)</li>
-</ul>
-
-<h2>5. JVM, JRE, JDK</h2>
-<p>
-<b>JVM (Java Virtual Machine):</b> Executes Java bytecode and provides platform independence.
-</p>
-<p>
-<b>JRE (Java Runtime Environment):</b> JVM + core libraries.
-</p>
-<p>
-<b>JDK (Java Development Kit):</b> JRE + development tools like compiler and debugger.
-</p>
-
-<h2>6. Basic Java Program</h2>
-<code>
-class HelloWorld {
-    public static void main(String[] args) {
-        System.out.println("Hello, Java!");
-    }
-}
-</code>
-
-<h2>7. Java Tokens</h2>
-<ul>
-<li>Keywords</li>
-<li>Identifiers</li>
-<li>Literals</li>
-<li>Operators</li>
-<li>Separators</li>
-</ul>
-
-<h2>8. Data Types in Java</h2>
-<p>Java supports two types of data types:</p>
-
-<h3>Primitive Data Types</h3>
-<ul>
-<li>byte</li>
-<li>short</li>
-<li>int</li>
-<li>long</li>
-<li>float</li>
-<li>double</li>
-<li>char</li>
-<li>boolean</li>
-</ul>
-
-<h3>Non-Primitive Data Types</h3>
-<ul>
-<li>String</li>
-<li>Array</li>
-<li>Class</li>
-<li>Interface</li>
-</ul>
-
-<h2>9. Control Statements</h2>
-<p>
-Control statements control the flow of execution in a program.
-</p>
-
-<h3>Decision Making</h3>
-<ul>
-<li>if</li>
-<li>if-else</li>
-<li>switch</li>
-</ul>
-
-<h3>Looping Statements</h3>
-<ul>
-<li>for</li>
-<li>while</li>
-<li>do-while</li>
-</ul>
-
-<h2>10. Object-Oriented Programming Concepts</h2>
-
-<h3>Class</h3>
-<p>
-A class is a blueprint from which objects are created.
-</p>
-
-<h3>Object</h3>
-<p>
-An object is an instance of a class.
-</p>
-
-<h3>Inheritance</h3>
-<p>
-Inheritance allows one class to acquire properties of another class.
-</p>
-
-<h3>Polymorphism</h3>
-<p>
-Polymorphism allows methods to perform different tasks based on input.
-</p>
-
-<h3>Encapsulation</h3>
-<p>
-Encapsulation binds data and methods into a single unit.
-</p>
-
-<h3>Abstraction</h3>
-<p>
-Abstraction hides implementation details and shows only functionality.
-</p>
-
-<h2>11. Exception Handling</h2>
-<p>
-Exceptions are runtime errors. Java provides a powerful mechanism to handle them.
-</p>
-
-<code>
-try {
-    int a = 10 / 0;
-} catch (ArithmeticException e) {
-    System.out.println("Cannot divide by zero");
-} finally {
-    System.out.println("Execution completed");
-}
-</code>
-
-<h2>12. Multithreading</h2>
-<p>
-Multithreading allows multiple threads to run concurrently.
-</p>
-
-<h2>13. File Handling</h2>
-<p>
-Java provides File, FileReader, FileWriter classes for file handling.
-</p>
-
-<h2>14. Java Collections Framework</h2>
-<ul>
-<li>List – ArrayList, LinkedList</li>
-<li>Set – HashSet, TreeSet</li>
-<li>Map – HashMap, TreeMap</li>
-</ul>
-
-<h2>15. Advantages of Java</h2>
-<ul>
-<li>Secure</li>
-<li>Portable</li>
-<li>Scalable</li>
-<li>Large community</li>
-</ul>
-
-<h2>16. Disadvantages of Java</h2>
-<ul>
-<li>Slower than C/C++</li>
-<li>Memory consumption</li>
-</ul>
-
-<h2>17. Applications of Java</h2>
-<ul>
-<li>Web Applications</li>
-<li>Mobile Applications</li>
-<li>Enterprise Software</li>
-<li>Game Development</li>
-</ul>
-
-<h2>18. Summary</h2>
-<p>
-Java is a powerful, flexible, and widely-used programming language suitable
-for building scalable and secure applications.
-</p>
-
-<!-- RATING SECTION -->
-<div class="rating-section">
-    <h3>Rate this Content</h3>
-
-    <div class="stars">
-        <span data-value="1">★</span>
-        <span data-value="2">★</span>
-        <span data-value="3">★</span>
-        <span data-value="4">★</span>
-        <span data-value="5">★</span>
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
     </div>
 
-    <p id="ratingText">No rating yet</p>
+    <header class="reader-header">
+        <h1>Java Development – JVM, OOP & Spring Architecture</h1>
+        <p>Master JVM Memory, Inheritance, Interfaces, Streams API & Enterprise Backend Architecture</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Pranith</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>9 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. JVM Architecture & Memory Management</h2>
+    <p>Java code compiles into intermediate <strong>bytecode (.class)</strong> executed by the Java Virtual Machine (JVM). JVM memory is divided into Heap, Stack, Metaspace, and Program Counter registers.</p>
+
+    <ul>
+        <li><strong>Heap Memory:</strong> Stores objects, arrays, and instance variables managed by Automatic Garbage Collection (G1GC / ZGC).</li>
+        <li><strong>Stack Memory:</strong> Holds primitive local variables and method call frames.</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>CoursePartner.java</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>public class CoursePartner {
+    private String name;
+    private int points;
+
+    public CoursePartner(String name, int points) {
+        this.name = name;
+        this.points = points;
+    }
+
+    public synchronized void rewardPoints(int delta) {
+        this.points += delta;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+}</code></pre>
+    </div>
+
+    <h2>2. Streams API & Functional Operations</h2>
+    <p>Java 8+ Streams allow functional-style operations (filter, map, reduce) over collections without explicit loop mutations.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>StreamFilterDemo.java</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>import java.util.List;
+import java.util.stream.Collectors;
+
+public class StreamDemo {
+    public static void main(String[] args) {
+        List&lt;String&gt; courses = List.of("Java", "Python", "React", "Docker", "Node");
+
+        List&lt;String&gt; filtered = courses.stream()
+            .filter(c -&gt; c.length() &gt; 4)
+            .map(String::toUpperCase)
+            .collect(Collectors.toList());
+
+        System.out.println("Filtered Courses: " + filtered);
+    }
+}</code></pre>
+    </div>
+
+    <h2>3. Multithreading & Concurrent Collections</h2>
+    <p>Java provides robust multithreading APIs via <code>ExecutorService</code>, <code>CompletableFuture</code>, and thread-safe collections like <code>ConcurrentHashMap</code>.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Where are Java object instances stored in JVM memory?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="true">A) Heap Memory</button>
+            <button class="quiz-option-btn" data-correct="false">B) Stack Memory</button>
+            <button class="quiz-option-btn" data-correct="false">C) Register Cache</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
 </div>
 
-
-<!-- BACK LINK -->
-<div class="back-link">
-    ← <a href="../front/front.html">Back to SkillSwap</a>
-</div>
-
+<script src="../front/app-state.js"></script>
 <script src="rating.js"></script>
-
-
-</div>
 </body>
 </html>

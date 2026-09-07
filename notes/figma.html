@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Figma UI/UX Design Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Figma UI/UX Design – Auto-Layout & Design Systems</h1>
+        <p>Master Design Tokens, Responsive Auto-Layout 5.0, Component Variants & Prototyping</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Kavya</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>7 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Design Tokens & Color Systems</h2>
+    <p>Design tokens define raw design choices (colors, spacing, typography, shadows) as centralized variables. This allows design systems to support dynamic dark/light themes and multi-platform component export effortlessly.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>design-tokens.json</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>{
+  "color": {
+    "primary": { "value": "#d6b77c" },
+    "background": {
+      "dark": { "value": "#0f172a" },
+      "light": { "value": "#f4efe6" }
+    }
+  },
+  "spacing": { "md": "16px", "lg": "24px" }
+}</code></pre>
+    </div>
+
+    <h2>2. Auto-Layout 5.0 & Responsive Constraints</h2>
+    <p>Figma's Auto-Layout creates responsive frames that adapt automatically to content length and viewport resizing. Use <strong>Fill Container</strong> for fluid widths and <strong>Hug Contents</strong> for auto-sizing cards.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which Figma Auto-Layout resizing property causes an element to expand dynamically to fill its parent frame?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) Fixed Width</button>
+            <button class="quiz-option-btn" data-correct="true">B) Fill Container</button>
+            <button class="quiz-option-btn" data-correct="false">C) Hug Contents</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

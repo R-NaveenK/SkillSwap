@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Data Structures & Algorithms Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Data Structures & Algorithms – Problem Solving</h1>
+        <p>Master Big-O Complexity, Arrays, Linked Lists, Trees, Graphs, Sorting & Dynamic Programming</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Vikram</strong></span>
+            <span>Rating: <strong>4.9 / 5</strong></span>
+            <span>Read Time: <strong>10 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Big-O Complexity Analysis</h2>
+    <p>Big-O notation quantifies algorithm performance as input size <code>N</code> scales towards infinity.</p>
+
+    <ul>
+        <li><strong>O(1) Constant:</strong> Direct array lookup or hash map key fetch.</li>
+        <li><strong>O(log N) Logarithmic:</strong> Binary search on sorted data.</li>
+        <li><strong>O(N) Linear:</strong> Single pass traversal over array elements.</li>
+        <li><strong>O(N log N) Linearithmic:</strong> Efficient sorting algorithms (MergeSort, QuickSort).</li>
+        <li><strong>O(N²) Quadratic:</strong> Nested loops (BubbleSort, InsertionSort).</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>binary_search.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>function binarySearch(arr, target) {
+    let left = 0;
+    let right = arr.length - 1;
+
+    while (left <= right) {
+        let mid = Math.floor((left + right) / 2);
+        if (arr[mid] === target) return mid;
+        if (arr[mid] < target) left = mid + 1;
+        else right = mid - 1;
+    }
+    return -1; // Target not found
+}
+
+console.log(binarySearch([10, 20, 30, 40, 50], 40)); // Index 3</code></pre>
+    </div>
+
+    <h2>2. Dynamic Programming & Memoization</h2>
+    <p>Dynamic Programming solves complex problems by breaking them down into overlapping subproblems, storing solved results in a lookup table (memoization or tabulation) to prevent redundant calculations.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>fibonacci_dp.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>// Dynamic Programming Fibonacci O(N) Time, O(1) Space
+function fibonacci(n) {
+    if (n <= 1) return n;
+    let prev = 0, curr = 1;
+    for (let i = 2; i <= n; i++) {
+        let temp = prev + curr;
+        prev = curr;
+        curr = temp;
+    }
+    return curr;
+}
+
+console.log("Fibonacci(50):", fibonacci(50));</code></pre>
+    </div>
+
+    <h2>3. Tree & Graph Traversal (BFS vs DFS)</h2>
+    <p><strong>Breadth-First Search (BFS)</strong> uses a Queue to explore graph nodes level by level (ideal for shortest paths). <strong>Depth-First Search (DFS)</strong> uses a Stack or Recursion to explore paths to maximum depth.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>What is the worst-case time complexity of binary search on a sorted array of size N?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) O(N)</button>
+            <button class="quiz-option-btn" data-correct="true">B) O(log N)</button>
+            <button class="quiz-option-btn" data-correct="false">C) O(N²)</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

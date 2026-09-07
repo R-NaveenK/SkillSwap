@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Node.js & Express Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Node.js & Express – Backend API Architecture</h1>
+        <p>Master Event-Driven Non-blocking I/O, Express Middleware, REST API Routing & JWT Security</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Karthik</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Non-Blocking I/O & Libuv Event Loop</h2>
+    <p>Node.js runs JavaScript on the V8 engine and uses <strong>Libuv</strong> thread pool for asynchronous file, network, and database operations. This single-threaded event loop design handles tens of thousands of concurrent client connections efficiently.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>server.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>const express = require('express');
+const app = express();
+
+app.use(express.json());
+
+// In-Memory Skill Swap Store
+let skills = [
+    { id: 1, title: 'Fullstack Dev', category: 'Tech', points: 30 }
+];
+
+app.get('/api/skills', (req, res) => {
+    res.json({ success: true, count: skills.length, data: skills });
+});
+
+app.post('/api/post-skill', (req, res) => {
+    const newSkill = { id: Date.now(), ...req.body };
+    skills.push(newSkill);
+    res.status(201).json({ message: "Skill Shared! Earned +30 Points", skill: newSkill });
+});
+
+app.listen(3000, () => console.log('Node Server Running on port 3000'));</code></pre>
+    </div>
+
+    <h2>2. Express Middleware Pipeline & Error Handling</h2>
+    <p>Express applications execute middleware functions sequentially in a request pipeline. Custom middleware handles authentication, logging, CORS, and centralized error catching.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>authMiddleware.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>function authMiddleware(req, res, next) {
+    const token = req.headers.authorization;
+    if (!token) return res.status(401).json({ error: "Access Denied. Token Missing." });
+    
+    try {
+        req.user = { username: "Naveen", role: "Swapper" };
+        next(); // Pass control to next handler
+    } catch (err) {
+        res.status(403).json({ error: "Invalid Authentication Token" });
+    }
+}</code></pre>
+    </div>
+
+    <h2>3. Asynchronous Streams & Buffer Management</h2>
+    <p>Node.js Streams read and write large datasets (e.g. video files, database dumps) in chunks rather than buffering everything into RAM memory at once.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>What C++ library powers Node.js asynchronous event loop and thread pool?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) V8 Engine</button>
+            <button class="quiz-option-btn" data-correct="true">B) Libuv</button>
+            <button class="quiz-option-btn" data-correct="false">C) Nginx</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

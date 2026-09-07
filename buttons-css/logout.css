@@ -1,63 +1,62 @@
-* {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
-
-body {
-    margin: 0;
-    background: #f4efe6;
-    height: 100vh;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.logout-container {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
+/* Logout Styling */
 .logout-card {
-    width: 360px;
-    background: #faf7f1;
-    padding: 30px;
-    border-radius: 22px;
+    background: var(--gradient-card);
+    border: 1px solid var(--border-highlight);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    max-width: 440px;
+    width: 90%;
     text-align: center;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+    box-shadow: var(--shadow-md);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
 }
 
-.logout-card h2 {
-    margin-bottom: 10px;
+.logout-icon {
+    width: 64px;
+    height: 64px;
+    background: rgba(244, 63, 94, 0.15);
+    color: var(--accent-rose);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
 }
 
-.logout-card p {
-    color: #555;
-    margin-bottom: 25px;
-}
-
-/* BUTTONS */
 .actions {
     display: flex;
-    justify-content: space-between;
-    gap: 12px;
+    gap: 14px;
+    width: 100%;
+    margin-top: 12px;
 }
 
-.actions button {
+.cancel-btn, .confirm-btn {
     flex: 1;
     padding: 12px;
-    border-radius: 14px;
-    border: none;
-    font-weight: bold;
+    border-radius: var(--radius-md);
+    font-weight: 700;
+    font-size: 14px;
     cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
 }
 
-.cancel {
-    background: #fff;
-    border: 1px solid #ccc;
+.cancel-btn {
+    background: var(--bg-card);
+    border: 1px solid var(--border-color);
+    color: var(--text-primary);
 }
 
-.confirm {
-    background: #f1c97a;
+.confirm-btn {
+    background: var(--accent-rose);
+    color: white;
+}
+
+.confirm-btn:hover {
+    box-shadow: 0 4px 15px rgba(244, 63, 94, 0.4);
+    transform: scale(1.03);
 }

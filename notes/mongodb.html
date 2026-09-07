@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MongoDB & NoSQL Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>MongoDB & NoSQL – Document Databases & Aggregation</h1>
+        <p>Master BSON Document Storage, Indexing Strategies, Aggregation Pipelines & Mongoose ODM</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Priyanka</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Document Data Modeling vs Relational Tables</h2>
+    <p>MongoDB stores data as flexible, schema-less <strong>BSON (Binary JSON)</strong> documents. Related data can be embedded within a single document or referenced via ObjectId pointers.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>UserSchema.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>const mongoose = require('mongoose');
+
+const UserSchema = new mongoose.Schema({
+    username: { type: String, required: true, unique: true },
+    points: { type: Number, default: 120 },
+    unlockedCourses: [{ type: String }],
+    pinnedItems: [{
+        id: String,
+        title: String,
+        link: String
+    }],
+    createdAt: { type: Date, default: Date.now }
+});
+
+module.exports = mongoose.model('User', UserSchema);</code></pre>
+    </div>
+
+    <h2>2. Aggregation Pipeline Engine</h2>
+    <p>MongoDB Aggregation Framework transforms data through multi-stage pipelines (<code>$match</code>, <code>$group</code>, <code>$project</code>, <code>$sort</code>, <code>$lookup</code>).</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>aggregation.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>// Calculate total points earned per skill category
+db.skills.aggregate([
+    { $match: { category: "Tech" } },
+    { $group: { _id: "$shareType", totalPoints: { $sum: "$pointsReward" } } },
+    { $sort: { totalPoints: -1 } }
+]);</code></pre>
+    </div>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>In what format does MongoDB natively store documents on disk?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) Plain XML</button>
+            <button class="quiz-option-btn" data-correct="true">B) BSON (Binary JSON)</button>
+            <button class="quiz-option-btn" data-correct="false">C) SQL Tables</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

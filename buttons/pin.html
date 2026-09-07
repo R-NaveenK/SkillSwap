@@ -1,68 +1,102 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
-    <title>Pin Your Favourite | SkillSwap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinned Favorites | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
     <link rel="stylesheet" href="../buttons-css/pin.css">
 </head>
-<body>
+<body class="light-mode">
 
-<div class="pin-container">
+<div class="app">
 
-    <!-- HEADER -->
-    <div class="header">
-        <h2>📌 Pin Your Favourites</h2>
-        <p>Save posts, videos, or notes you love.</p>
-    </div>
+    <!-- UNIFIED SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <a href="../front/front.html" class="logo-container">
+                <div class="logo-icon">SS</div>
+                <span class="logo-text">SkillSwap</span>
+            </a>
 
-    <!-- FILTER BUTTONS -->
-    <div class="filter-buttons">
-        <button class="active" data-type="all">All</button>
-        <button data-type="post">Posts</button>
-        <button data-type="video">Videos</button>
-        <button data-type="note">Notes</button>
-    </div>
-
-    <!-- PIN ITEMS -->
-    <div class="pin-grid">
-
-        <div class="pin-card" data-id="1" data-type="post">
-            <h4>HTML Basics</h4>
-            <p>Post about clean HTML structure.</p>
-            <button class="pin-btn">📌 Pin</button>
+            <nav class="nav-menu">
+                <a href="../front/front.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+                <a href="projects.html" class="nav-item">
+                    <span>Projects</span>
+                </a>
+                <a href="post.html" class="nav-item">
+                    <span>Post Skill</span>
+                </a>
+                <a href="pin.html" class="nav-item active">
+                    <span>Bookmarks</span>
+                    <span class="nav-badge" id="sidebarPinCount">0</span>
+                </a>
+                <a href="ai.html" class="nav-item">
+                    <span>AI Assistant</span>
+                    <span class="nav-badge" style="background: var(--accent-indigo); color: #fff; font-weight: 700;">PRO</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <span>Support</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <span>Sign Out</span>
+                </a>
+            </nav>
         </div>
 
-        <div class="pin-card" data-id="1" data-type="video">
-            <h4>CSS Flexbox</h4>
-            <p>Video tutorial on Flexbox.</p>
-            <button class="pin-btn">📌 Pin</button>
+        <div class="sidebar-user-card">
+            <div class="user-avatar" id="userAvatar">N</div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Naveen</span>
+                <span class="user-points-badge"><span id="sidebarPoints">120</span> Pts</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <header class="topbar">
+            <div class="header-title-group">
+                <h1>Pinned Hub</h1>
+                <p>Access your saved courses, community posts, and technical notes</p>
+            </div>
+
+            <div class="topbar-actions">
+                <div class="points-pill">
+                    <span id="pointsValue">120 Points</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- SEARCH BAR -->
+        <div class="search-box" style="margin-bottom: 18px;">
+            <input type="text" id="pinSearchInput" class="search-input" placeholder="Search inside your pinned favorites...">
         </div>
 
-        <div class="pin-card" data-id="1" data-type="note">
-            <h4>JavaScript Notes</h4>
-            <p>Short notes on JS fundamentals.</p>
-            <button class="pin-btn">📌 Pin</button>
+        <!-- CATEGORY FILTER BUTTONS -->
+        <div class="category-pills" id="pinFilterPills" style="margin-bottom: 28px;">
+            <button class="category-pill active" data-filter="all">All Items</button>
+            <button class="category-pill" data-filter="note">Notes</button>
+            <button class="category-pill" data-filter="course">Courses</button>
+            <button class="category-pill" data-filter="post">Custom Posts</button>
         </div>
 
-        <div class="pin-card" data-id="1" data-type="video">
-            <h4>Python Loops</h4>
-            <p>Explained with examples.</p>
-            <button class="pin-btn">📌 Pin</button>
+        <!-- PINNED ITEMS GRID -->
+        <div class="grid" id="pinnedGrid">
+            <!-- Rendered via JavaScript -->
         </div>
 
-        <div class="pin-card" data-id="1" data-type="video">
-            <h4>Basic OOPs</h4>
-            <p>About Classes & Objects.</p>
-            <button class="pin-btn">📌 Pin</button>
-        </div>
-
-    </div>
-
+    </main>
 </div>
 
-
-
-
+<script src="../front/app-state.js"></script>
 <script src="../buttons-js/pin.js"></script>
 </body>
 </html>
+

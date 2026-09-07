@@ -1,291 +1,139 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<title>JavaScript Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JavaScript Mastery Notes | SkillSwap</title>
 <link rel="stylesheet" href="notes.css">
 </head>
-<body>
+<body class="notes-body light-mode">
 
-<div class="container">
+<div class="notes-container">
 
-<h1>JavaScript – Detailed Notes</h1>
-
-<h2>1. Introduction to JavaScript</h2>
-<p>
-JavaScript is a high-level, interpreted scripting language used to create
-dynamic and interactive web pages. It was developed by Brendan Eich in 1995.
-JavaScript runs inside the browser and can also be used on the server side
-using environments like Node.js.
-</p>
-
-<p>
-JavaScript is one of the core technologies of the web, along with HTML and CSS.
-</p>
-
-<h2>2. History of JavaScript</h2>
-<ul>
-<li>1995 – Created by Brendan Eich</li>
-<li>1997 – ECMAScript standard introduced</li>
-<li>2009 – Node.js released</li>
-<li>2015 – ES6 introduced modern JavaScript</li>
-</ul>
-
-<h2>3. Features of JavaScript</h2>
-<ul>
-<li>Lightweight and fast</li>
-<li>Interpreted language</li>
-<li>Event-driven</li>
-<li>Platform independent</li>
-<li>Supports object-oriented programming</li>
-<li>Runs in browser and server</li>
-</ul>
-
-<h2>4. JavaScript Execution</h2>
-<p>
-JavaScript code is executed by the browser’s JavaScript engine
-(Chrome uses V8 engine).
-</p>
-
-<h2>5. Basic JavaScript Program</h2>
-<code>
-console.log("Hello, JavaScript");
-</code>
-
-<h2>6. JavaScript Syntax</h2>
-<p>
-JavaScript syntax is similar to C and Java.
-</p>
-
-<code>
-let a = 10;
-let b = 20;
-console.log(a + b);
-</code>
-
-<h2>7. Variables</h2>
-<p>
-Variables are used to store data values.
-</p>
-
-<ul>
-<li>var – function scoped</li>
-<li>let – block scoped</li>
-<li>const – constant value</li>
-</ul>
-
-<code>
-let name = "SkillSwap";
-const pi = 3.14;
-</code>
-
-<h2>8. Data Types</h2>
-<ul>
-<li>Number</li>
-<li>String</li>
-<li>Boolean</li>
-<li>Undefined</li>
-<li>Null</li>
-<li>Object</li>
-<li>Array</li>
-</ul>
-
-<h2>9. Operators</h2>
-<ul>
-<li>Arithmetic Operators</li>
-<li>Comparison Operators</li>
-<li>Logical Operators</li>
-<li>Assignment Operators</li>
-</ul>
-
-<h2>10. Conditional Statements</h2>
-<code>
-let age = 18;
-
-if (age >= 18) {
-    console.log("Eligible to vote");
-} else {
-    console.log("Not eligible");
-}
-</code>
-
-<h2>11. Loops</h2>
-
-<h3>For Loop</h3>
-<code>
-for (let i = 0; i < 5; i++) {
-    console.log(i);
-}
-</code>
-
-<h3>While Loop</h3>
-<code>
-let i = 0;
-while (i < 5) {
-    console.log(i);
-    i++;
-}
-</code>
-
-<h2>12. Functions</h2>
-<p>
-Functions are reusable blocks of code.
-</p>
-
-<code>
-function add(a, b) {
-    return a + b;
-}
-</code>
-
-<h2>13. Arrow Functions</h2>
-<code>
-const add = (a, b) => a + b;
-</code>
-
-<h2>14. Arrays</h2>
-<p>
-Arrays store multiple values in a single variable.
-</p>
-
-<code>
-let fruits = ["apple", "banana", "orange"];
-</code>
-
-<h2>15. Objects</h2>
-<p>
-Objects store data in key-value pairs.
-</p>
-
-<code>
-let student = {
-    name: "John",
-    age: 20
-};
-</code>
-
-<h2>16. String Methods</h2>
-<ul>
-<li>length</li>
-<li>toUpperCase()</li>
-<li>toLowerCase()</li>
-<li>slice()</li>
-</ul>
-
-<h2>17. Array Methods</h2>
-<ul>
-<li>push()</li>
-<li>pop()</li>
-<li>map()</li>
-<li>filter()</li>
-<li>forEach()</li>
-</ul>
-
-<h2>18. DOM (Document Object Model)</h2>
-<p>
-DOM allows JavaScript to interact with HTML elements.
-</p>
-
-<code>
-document.getElementById("demo").innerText = "Hello DOM";
-</code>
-
-<h2>19. Events</h2>
-<p>
-Events respond to user actions like click, input, hover.
-</p>
-
-<code>
-button.addEventListener("click", function() {
-    alert("Button clicked");
-});
-</code>
-
-<h2>20. Form Validation</h2>
-<p>
-JavaScript can validate user input before submitting forms.
-</p>
-
-<h2>21. Error Handling</h2>
-<code>
-try {
-    let x = y + 10;
-} catch (error) {
-    console.log(error);
-}
-</code>
-
-<h2>22. JSON</h2>
-<p>
-JSON is used for data exchange.
-</p>
-
-<code>
-let data = {
-    "name": "SkillSwap",
-    "type": "Learning Platform"
-};
-</code>
-
-<h2>23. JavaScript in Web Development</h2>
-<ul>
-<li>Form validation</li>
-<li>Dynamic content</li>
-<li>API calls</li>
-<li>Animations</li>
-</ul>
-
-<h2>24. Advantages of JavaScript</h2>
-<ul>
-<li>Runs in browser</li>
-<li>Fast execution</li>
-<li>Huge ecosystem</li>
-</ul>
-
-<h2>25. Disadvantages of JavaScript</h2>
-<ul>
-<li>Security risks</li>
-<li>Browser compatibility issues</li>
-</ul>
-
-<h2>26. Applications of JavaScript</h2>
-<ul>
-<li>Web applications</li>
-<li>Mobile apps</li>
-<li>Server-side apps</li>
-<li>Game development</li>
-</ul>
-
-<h2>27. Summary</h2>
-<p>
-JavaScript is a powerful scripting language that enables interactive and
-dynamic web experiences and is essential for modern web development.
-</p>
-
-<!-- RATING SECTION -->
-<div class="rating-section">
-    <h3>Rate this Content</h3>
-
-    <div class="stars">
-        <span data-value="1">★</span>
-        <span data-value="2">★</span>
-        <span data-value="3">★</span>
-        <span data-value="4">★</span>
-        <span data-value="5">★</span>
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
     </div>
 
-    <p id="ratingText">No rating yet</p>
+    <header class="reader-header">
+        <h1>JavaScript Mastery – ES6+, Async JS & Architecture</h1>
+        <p>Master Promises, Async/Await, DOM Event Loops, Closures, Scopes & Modern Framework Principles</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Zahira Shirin</strong></span>
+            <span>Rating: <strong>4.9 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Async JS, Event Loop & Promises</h2>
+    <p>JavaScript executes asynchronously on a single-threaded runtime using an <strong>Event Loop</strong>. Non-blocking operations (HTTP requests, timers, disk I/O) offload tasks to web APIs, placing callbacks into Microtask and Macrotask queues.</p>
+    
+    <ul>
+        <li><strong>Microtask Queue:</strong> Holds resolved Promise callbacks (<code>.then()</code>, <code>async/await</code>) and has higher execution priority.</li>
+        <li><strong>Macrotask Queue:</strong> Holds <code>setTimeout</code>, <code>setInterval</code>, and DOM event listeners.</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>async_mastery.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>async function fetchSkillData() {
+    try {
+        console.log("1. Request Initiated");
+        const response = await fetch("http://localhost:3000/api/skills");
+        const data = await response.json();
+        console.log("2. Skill Swap Data Loaded:", data);
+        return data;
+    } catch (error) {
+        console.error("Failed to load skills:", error);
+    }
+}
+
+// Chaining async flows with error boundary handling
+fetchSkillData().then(skills => console.log("3. UI Sync Completed"));</code></pre>
+    </div>
+
+    <h2>2. Closures & Lexical Scope Chain</h2>
+    <p>A <strong>closure</strong> is a function bundled together with references to its surrounding lexical environment. Closures allow inner functions to access variables from an outer scope even after the outer function has returned.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>closures.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>function createPointsWallet(initialPoints = 100) {
+    let points = initialPoints; // Private state encapsulated in closure
+
+    return {
+        addPoints(amount) {
+            points += amount;
+            return points;
+        },
+        spendPoints(amount) {
+            if (amount > points) throw new Error("Insufficient Points Balance");
+            points -= amount;
+            return points;
+        },
+        getBalance: () => points
+    };
+}
+
+const userWallet = createPointsWallet(120);
+console.log(userWallet.addPoints(30)); // 150 Points</code></pre>
+    </div>
+
+    <h2>3. DOM Event Delegation & Performance Optimization</h2>
+    <p>Event delegation leverages event bubbling to handle events at a common parent container rather than attaching separate event listeners to dozens of child elements. This saves memory and handles dynamically added elements seamlessly.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>event_delegation.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>// Efficient container listener using Event Delegation
+document.getElementById("coursesContainer").addEventListener("click", (e) => {
+    const card = e.target.closest(".course-card");
+    if (card) {
+        const courseId = card.dataset.id;
+        console.log("Swapping course:", courseId);
+    }
+});</code></pre>
+    </div>
+
+    <h2>4. ES6+ Modules, Destructuring & Rest/Spread</h2>
+    <p>Modern JavaScript uses ES6 module syntax (<code>import / export</code>) for code encapsulation. Object and array destructuring streamlines parameter extraction and state updates.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>What keyword pauses async execution inside an async function until a Promise resolves?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) defer</button>
+            <button class="quiz-option-btn" data-correct="true">B) await</button>
+            <button class="quiz-option-btn" data-correct="false">C) pause</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
 </div>
 
-
-<!-- BACK LINK AT END -->
-<div class="back-link">
-    ← <a href="../front/front.html">Back to SkillSwap</a>
-</div>
-
-</div>
-
+<script src="../front/app-state.js"></script>
 <script src="rating.js"></script>
-
 </body>
 </html>

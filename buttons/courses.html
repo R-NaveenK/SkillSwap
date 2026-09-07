@@ -1,103 +1,152 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="signature">
+
 <head>
     <meta charset="UTF-8">
-    <title>Courses | SkillSwap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses & Curriculum | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
     <link rel="stylesheet" href="../buttons-css/courses.css">
 </head>
-<body>
 
-<div class="courses-container">
+<body class="signature-mode">
 
-    <!-- HEADER -->
-    <div class="header">
-        <h2>Courses</h2>
-        <p>Learn or Teach — knowledge flows both ways.</p>
+    <div class="app">
+
+        <!-- UNIFIED SIDEBAR -->
+        <aside class="sidebar">
+            <div>
+                <a href="../front/front.html" class="logo-container">
+                    <div class="logo-icon">SS</div>
+                    <span class="logo-text">SkillSwap</span>
+                </a>
+
+                <nav class="nav-menu">
+                    <a href="../front/front.html" class="nav-item">
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="courses.html" class="nav-item active">
+                        <span>Courses</span>
+                    </a>
+                    <a href="projects.html" class="nav-item">
+                        <span>Projects</span>
+                    </a>
+                    <a href="post.html" class="nav-item">
+                        <span>Post Skill</span>
+                    </a>
+                    <a href="pin.html" class="nav-item">
+                        <span>Bookmarks</span>
+                        <span class="nav-badge" id="sidebarPinCount">0</span>
+                    </a>
+                    <a href="ai.html" class="nav-item">
+                        <span>AI Assistant</span>
+                        <span class="nav-badge" style="background: var(--accent-rose); color: var(--text-primary); font-weight: 800;">LIVE</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <span>Support Center</span>
+                    </a>
+                    <a href="logout.html" class="nav-item">
+                        <span>Sign Out</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="userAvatar">N</div>
+                <div class="user-info">
+                    <span class="user-name" id="userName">Naveen</span>
+                    <span class="user-points-badge"><span id="sidebarPoints">120</span> Points</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT -->
+        <main class="main">
+
+            <header class="topbar">
+                <div class="header-title-group">
+                    <h1>Technical Courses & Curricula</h1>
+                    <p>Structured curriculum guides and interactive notes created by peer experts.</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <div class="points-pill">
+                        <span id="pointsValue">120 Points</span>
+                    </div>
+                </div>
+            </header>
+
+            <!-- MODE SELECTOR -->
+            <div class="mode-select-container">
+                <div class="mode-toggle">
+                    <button id="learnBtn" class="mode-btn active">Learning Track</button>
+                    <button id="teachBtn" class="mode-btn">Instruction Track</button>
+                </div>
+            </div>
+
+            <!-- TEACH MODE EXPLANATION BANNER (Visible in Teach Mode) -->
+            <div id="teachModeBanner" class="teach-mode-banner" style="display: none;">
+                <div class="teach-banner-content">
+                    <div class="teach-banner-text">
+                        <h2>Register as Course Instructor</h2>
+                        <p>Publish verified study curriculum, lead technical consultations, and earn <strong>+50 Points</strong> reward per registered learner.</p>
+                    </div>
+                </div>
+                <a href="post.html" class="teach-action-btn">+ Publish New Course (+30 Pts)</a>
+            </div>
+
+            <!-- SEARCH & CATEGORY FILTER BAR -->
+            <div class="search-box" style="margin-bottom: 18px;">
+                <input type="text" id="courseSearchInput" class="search-input"
+                    placeholder="Filter courses by name, topic, or instructor...">
+            </div>
+
+            <div class="category-pills" id="courseCategoryPills"
+                style="margin-bottom: 28px; display: flex; gap: 10px; flex-wrap: wrap;">
+                <button class="category-pill active" data-category="all">All Topics (18+)</button>
+                <button class="category-pill" data-category="Tech">Computer Science</button>
+                <button class="category-pill" data-category="Web">Web Engineering</button>
+                <button class="category-pill" data-category="Design">Product & UI Design</button>
+                <button class="category-pill" data-category="Database">Database Systems</button>
+                <button class="category-pill" data-category="Tools">Cloud & DevOps</button>
+                <button class="category-pill" data-category="Community">Community Listings</button>
+            </div>
+
+            <!-- COURSES GRID -->
+            <div class="grid" id="coursesGrid">
+                <!-- Dynamically populated in JavaScript -->
+            </div>
+
+            <!-- TEACH INSTRUCTOR MODAL -->
+            <div id="teachModal" class="modal-overlay">
+                <div class="modal-card">
+                    <div class="modal-header">
+                        <h3 id="modalTeachTitle" style="font-size: 19px; font-weight: 800;">Instructor Registration</h3>
+                        <button class="modal-close" id="closeTeachModal">&times;</button>
+                    </div>
+                    
+                    <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+                        <span style="font-size: 13px; color: var(--text-primary); font-weight: 800;">Instructor Perk: +50 Points Reward Balance</span>
+                        <p id="modalTeachDesc" style="font-size: 14px; color: var(--text-secondary); line-height: 1.6;">
+                            As a verified instructor, your curriculum will be featured on the platform and you will earn points for every enrolled student.
+                        </p>
+                        
+                        <button id="startTeachingBtn" class="action-btn" style="width: 100%; padding: 14px; font-size: 15px; font-weight: 800; cursor: pointer;">
+                            Confirm Instructor Registration (+50 Pts)
+                        </button>
+                        
+                        <a href="post.html" class="action-btn" style="text-align: center; text-decoration: none; padding: 12px; font-size: 14px; font-weight: 700; background: var(--bg-card); border: 1px solid var(--border-color); color: var(--text-primary); box-shadow: none;">
+                            Publish Notes for this Course
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </main>
     </div>
 
-    <!-- MODE SELECT -->
-    <div class="mode-select">
-        <button id="learnBtn" class="active">Learn</button>
-        <button id="teachBtn">Teach</button>
-    </div>
-
-    <!-- COURSES GRID -->
-    <div class="courses-grid">
-
-        <div class="course-card">
-            <h3>Web Development</h3>
-            <p>HTML, CSS, JavaScript fundamentals.</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>Python Programming</h3>
-            <p>Basics to intermediate Python concepts.</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>Structured Query Language (SQL)</h3>
-            <p>Data Querying Foundations .</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>GIT & GIT Hub</h3>
-            <p>Version Control Concepts.<br></p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>C++</h3>
-            <p>Advanced Object Oriented Programming Concepts.</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>JavaScript</h3>
-            <p>Basics to Dynamic Web scripting.</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-        <div class="course-card">
-            <h3>Cascading Style Sheets (CSS)</h3>
-            <p>Basics to Web-page Styling.</p>
-
-            <div class="course-actions">
-                <button class="notes-btn">📘 Notes</button>
-                <button class="video-btn">🎥 Videos</button>
-            </div>
-        </div>
-
-    </div>
-
-</div>
-
-<script src="../buttons-js/couses.js"></script>
+    <script src="../front/app-state.js"></script>
+    <script src="../buttons-js/courses.js"></script>
 </body>
+
 </html>

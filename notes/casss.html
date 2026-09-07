@@ -1,287 +1,110 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="UTF-8">
-<title>CSS Notes</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CSS & Web Styling Notes | SkillSwap</title>
 <link rel="stylesheet" href="notes.css">
 </head>
-<body>
+<body class="notes-body light-mode">
 
-<div class="container">
+<div class="notes-container">
 
-<h1>CSS – Cascading Style Sheets (Detailed Notes)</h1>
-
-<h2>1. Introduction to CSS</h2>
-<p>
-CSS stands for Cascading Style Sheets. It is used to control the appearance,
-layout, and design of web pages written in HTML.
-CSS separates content from presentation, making websites easier to maintain
-and more flexible.
-</p>
-
-<p>
-CSS was introduced by the World Wide Web Consortium (W3C) in 1996.
-</p>
-
-<h2>2. Why CSS is Needed</h2>
-<ul>
-<li>Improves website appearance</li>
-<li>Maintains consistency across pages</li>
-<li>Reduces HTML complexity</li>
-<li>Enables responsive design</li>
-</ul>
-
-<h2>3. Types of CSS</h2>
-
-<h3>Inline CSS</h3>
-<p>
-Applied directly inside HTML tags.
-</p>
-
-<code>
-&lt;h1 style="color:red;"&gt;Hello&lt;/h1&gt;
-</code>
-
-<h3>Internal CSS</h3>
-<p>
-Defined inside the &lt;style&gt; tag within the HTML file.
-</p>
-
-<h3>External CSS</h3>
-<p>
-Written in a separate .css file and linked to HTML.
-</p>
-
-<code>
-&lt;link rel="stylesheet" href="style.css"&gt;
-</code>
-
-<h2>4. CSS Syntax</h2>
-<code>
-selector {
-    property: value;
-}
-</code>
-
-<h2>5. CSS Selectors</h2>
-<ul>
-<li>Universal Selector (*)</li>
-<li>Element Selector</li>
-<li>Class Selector (.class)</li>
-<li>ID Selector (#id)</li>
-<li>Group Selector</li>
-</ul>
-
-<h2>6. Colors in CSS</h2>
-<ul>
-<li>Color names</li>
-<li>HEX values</li>
-<li>RGB / RGBA</li>
-<li>HSL</li>
-</ul>
-
-<code>
-color: #ff0000;
-background-color: rgb(255,0,0);
-</code>
-
-<h2>7. Background Properties</h2>
-<ul>
-<li>background-color</li>
-<li>background-image</li>
-<li>background-repeat</li>
-<li>background-position</li>
-<li>background-size</li>
-</ul>
-
-<h2>8. Text Properties</h2>
-<ul>
-<li>color</li>
-<li>text-align</li>
-<li>text-decoration</li>
-<li>text-transform</li>
-<li>line-height</li>
-</ul>
-
-<h2>9. Font Properties</h2>
-<ul>
-<li>font-family</li>
-<li>font-size</li>
-<li>font-style</li>
-<li>font-weight</li>
-</ul>
-
-<h2>10. Box Model</h2>
-<p>
-The CSS Box Model consists of:
-</p>
-<ul>
-<li>Content</li>
-<li>Padding</li>
-<li>Border</li>
-<li>Margin</li>
-</ul>
-
-<code>
-div {
-    margin: 10px;
-    padding: 15px;
-    border: 1px solid black;
-}
-</code>
-
-<h2>11. Display Property</h2>
-<ul>
-<li>block</li>
-<li>inline</li>
-<li>inline-block</li>
-<li>none</li>
-</ul>
-
-<h2>12. Position Property</h2>
-<ul>
-<li>static</li>
-<li>relative</li>
-<li>absolute</li>
-<li>fixed</li>
-<li>sticky</li>
-</ul>
-
-<h2>13. Float and Clear</h2>
-<p>
-Used for positioning elements.
-</p>
-
-<h2>14. Flexbox</h2>
-<p>
-Flexbox is a one-dimensional layout system.
-</p>
-
-<ul>
-<li>display: flex</li>
-<li>justify-content</li>
-<li>align-items</li>
-<li>flex-direction</li>
-</ul>
-
-<h2>15. CSS Grid</h2>
-<p>
-Grid is a two-dimensional layout system.
-</p>
-
-<code>
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-</code>
-
-<h2>16. Responsive Design</h2>
-<p>
-Responsive design ensures websites work on all devices.
-</p>
-
-<h3>Media Queries</h3>
-<code>
-@media (max-width: 600px) {
-    body {
-        background-color: lightgray;
-    }
-}
-</code>
-
-<h2>17. Pseudo-classes</h2>
-<ul>
-<li>:hover</li>
-<li>:active</li>
-<li>:focus</li>
-<li>:visited</li>
-</ul>
-
-<h2>18. Pseudo-elements</h2>
-<ul>
-<li>::before</li>
-<li>::after</li>
-<li>::first-letter</li>
-</ul>
-
-<h2>19. Transitions</h2>
-<p>
-Transitions add smooth animation effects.
-</p>
-
-<code>
-button {
-    transition: background 0.3s ease;
-}
-</code>
-
-<h2>20. Animations</h2>
-<p>
-CSS animations use keyframes.
-</p>
-
-<code>
-@keyframes fadeIn {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-</code>
-
-<h2>21. Z-index</h2>
-<p>
-Controls stacking order of elements.
-</p>
-
-<h2>22. Advantages of CSS</h2>
-<ul>
-<li>Improves page speed</li>
-<li>Easy maintenance</li>
-<li>Consistent design</li>
-</ul>
-
-<h2>23. Disadvantages of CSS</h2>
-<ul>
-<li>Browser compatibility issues</li>
-<li>Complex layouts can be difficult</li>
-</ul>
-
-<h2>24. Applications of CSS</h2>
-<ul>
-<li>Website design</li>
-<li>Mobile-first layouts</li>
-<li>Animations</li>
-<li>UI/UX design</li>
-</ul>
-
-<h2>25. Summary</h2>
-<p>
-CSS is a core web technology used to design attractive, responsive,
-and user-friendly websites.
-</p>
-
-<!-- RATING SECTION -->
-<div class="rating-section">
-    <h3>Rate this Content</h3>
-
-    <div class="stars">
-        <span data-value="1">★</span>
-        <span data-value="2">★</span>
-        <span data-value="3">★</span>
-        <span data-value="4">★</span>
-        <span data-value="5">★</span>
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
     </div>
 
-    <p id="ratingText">No rating yet</p>
+    <header class="reader-header">
+        <h1>CSS & Web Styling – Glassmorphism & Themes</h1>
+        <p>Master Flexbox, CSS Grid, Custom Properties (Variables), Dark Themes & Micro-Animations</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Subasri</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Flexbox vs CSS Grid Systems</h2>
+    <p><strong>Flexbox</strong> handles 1D layout distribution (rows or columns). <strong>CSS Grid</strong> handles complex 2D spatial layouts with rows and columns working simultaneously.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>layout.css</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>/* Responsive auto-fit Grid system without media queries */
+.course-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 24px;
+}
+
+/* Flexbox centering utility */
+.center-flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}</code></pre>
+    </div>
+
+    <h2>2. Custom Properties & Dynamic Theme Engines</h2>
+    <p>CSS Variables (<code>--var-name</code>) enable instant global theme switching between light mode and dark mode without reloading styles.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>theme.css</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>:root[data-theme="dark"] {
+    --bg-main: #0f172a;
+    --text-primary: #f8fafc;
+    --border-color: rgba(255, 255, 255, 0.12);
+}
+
+:root[data-theme="light"] {
+    --bg-main: #f4efe6;
+    --text-primary: #1e1b18;
+    --border-color: rgba(214, 183, 124, 0.35);
+}
+
+body {
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}</code></pre>
+    </div>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which CSS layout module is designed specifically for two-dimensional row and column structures?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) Flexbox</button>
+            <button class="quiz-option-btn" data-correct="true">B) CSS Grid</button>
+            <button class="quiz-option-btn" data-correct="false">C) Float Layout</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
 </div>
 
-
-<!-- BACK LINK -->
-<div class="back-link">
-    ← <a href="../front/front.html">Back to SkillSwap</a>
-</div>
-
-</div>
-
+<script src="../front/app-state.js"></script>
 <script src="rating.js"></script>
-
 </body>
 </html>

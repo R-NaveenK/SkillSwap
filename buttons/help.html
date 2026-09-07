@@ -1,55 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Help & Support | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
     <link rel="stylesheet" href="../buttons-css/help.css">
 </head>
-<body>
+<body class="light-mode">
 
-<div class="help-container">
+<div class="app">
 
-    <!-- HEADER -->
-    <div class="header">
-        <h2>Help & Support</h2>
-        <p>We’re here to help you move forward.</p>
-    </div>
+    <!-- UNIFIED SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <a href="../front/front.html" class="logo-container">
+                <div class="logo-icon">SS</div>
+                <span class="logo-text">SkillSwap</span>
+            </a>
 
-    <!-- QUICK HELP -->
-    <div class="quick-help">
-        <h3>Common Issues</h3>
-
-        <div class="issue-buttons">
-            <button data-issue="login">Login / Account Issue</button>
-            <button data-issue="points">Points not updated</button>
-            <button data-issue="course">Course access problem</button>
-            <button data-issue="project">Project submission issue</button>
-            <button data-issue="upload">Notes / Video upload failed</button>
-            <button data-issue="other">Something else</button>
+            <nav class="nav-menu">
+                <a href="../front/front.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+                <a href="projects.html" class="nav-item">
+                    <span>Projects</span>
+                </a>
+                <a href="post.html" class="nav-item">
+                    <span>Post Skill</span>
+                </a>
+                <a href="pin.html" class="nav-item">
+                    <span>Bookmarks</span>
+                    <span class="nav-badge" id="sidebarPinCount">0</span>
+                </a>
+                <a href="ai.html" class="nav-item">
+                    <span>AI Assistant</span>
+                    <span class="nav-badge" style="background: var(--accent-indigo); color: #fff; font-weight: 700;">PRO</span>
+                </a>
+                <a href="help.html" class="nav-item active">
+                    <span>Support</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <span>Sign Out</span>
+                </a>
+            </nav>
         </div>
-    </div>
 
-    <!-- SOLUTION BOX -->
-    <div class="solution-box" id="solutionBox">
-        <h3>Solution</h3>
-        <p>Select an issue to see possible solutions.</p>
-    </div>
+        <div class="sidebar-user-card">
+            <div class="user-avatar" id="userAvatar">N</div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Naveen</span>
+                <span class="user-points-badge"><span id="sidebarPoints">120</span> Pts</span>
+            </div>
+        </div>
+    </aside>
 
-    <!-- CONTACT SUPPORT -->
-    <div class="contact-support">
-        <h3>Still need help?</h3>
+    <!-- MAIN CONTENT -->
+    <main class="main">
 
-        <form id="supportForm">
-            <input type="text" placeholder="Your Name" required>
-            <input type="email" placeholder="Email Address" required>
-            <textarea placeholder="Describe your problem..." required></textarea>
+        <header class="topbar">
+            <div class="header-title-group">
+                <h1>Help & Support Center</h1>
+                <p>Troubleshoot common questions or get in touch with SkillSwap peer assistance</p>
+            </div>
 
-            <button type="submit">Submit Request</button>
-        </form>
-    </div>
+            <div class="topbar-actions">
+                <div class="points-pill">
+                    <span id="pointsValue">120 Points</span>
+                </div>
+            </div>
+        </header>
 
+        <div class="support-grid">
+            <!-- QUICK HELP SELECTOR -->
+            <div class="support-card">
+                <h3>Select Common Topic</h3>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 16px;">Click any topic below to view instant troubleshooting steps:</p>
+
+                <div class="issue-buttons" id="issueButtons">
+                    <button class="issue-btn active" data-issue="login">Login & Account Access</button>
+                    <button class="issue-btn" data-issue="points">Points Balance & Daily Bonus</button>
+                    <button class="issue-btn" data-issue="course">Course Unlock & Pricing</button>
+                    <button class="issue-btn" data-issue="project">Project Reward Payouts</button>
+                    <button class="issue-btn" data-issue="upload">Note & Resource Submission</button>
+                </div>
+            </div>
+
+            <!-- SOLUTION BOX -->
+            <div class="support-card highlight" id="solutionBox">
+                <h3 id="solutionTitle" style="color: var(--accent-indigo);">Login & Account Troubleshooting</h3>
+                <div id="solutionContent" style="margin-top: 14px; line-height: 1.6; color: var(--text-secondary); font-size: 14px;">
+                    <p>1. Check if your browser cookies or LocalStorage are enabled.</p>
+                    <p>2. Ensure your backend server is running at <code>http://localhost:3000</code>.</p>
+                    <p>3. If credentials fail, reset your profile state or re-login via the Auth page.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- AI TUTOR & LEARNING ASSISTANT WIDGET -->
+        <div class="support-card highlight" style="margin-top: 32px; border: 1px solid var(--accent-indigo);">
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; flex-wrap: wrap; gap: 10px;">
+                <h3 style="color: var(--accent-indigo); display: flex; align-items: center; gap: 8px; font-size: 20px; font-weight: 800;">
+                    Instant AI Support Assistant
+                </h3>
+                <span style="font-size: 12px; background: rgba(74, 74, 74, 0.08); color: var(--text-primary); padding: 4px 12px; border-radius: 12px; font-weight: 700;">
+                    Automated Help
+                </span>
+            </div>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 20px;">
+                Ask any platform or coding question and receive an immediate AI-powered response:
+            </p>
+
+            <form id="aiTutorForm" style="display: flex; gap: 12px; flex-direction: column;">
+                <div style="display: flex; gap: 12px;">
+                    <input type="text" id="aiTutorInput" class="form-input" placeholder="e.g. How do I get 50 bonus points? or Explain Promises vs Async/Await..." style="flex: 1;" required>
+                    <button type="submit" class="action-btn" id="aiSubmitBtn" style="padding: 14px 24px; font-size: 15px; white-space: nowrap;">
+                        Ask AI Assistant
+                    </button>
+                </div>
+            </form>
+
+            <div id="aiResponseBox" style="display: none; margin-top: 20px; padding: 22px; background: var(--bg-card); border-radius: var(--radius-md); border: 1px solid var(--border-color); animation: fadeIn 0.3s ease;">
+                <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 10px; font-weight: 800; color: var(--text-primary); font-size: 16px;">
+                    <span>AI Assistant Response:</span>
+                </div>
+                <div id="aiResponseContent" style="font-size: 15px; line-height: 1.75; color: var(--text-primary); white-space: pre-wrap;"></div>
+            </div>
+        </div>
+
+        <!-- CONTACT SUPPORT FORM -->
+        <div class="support-card" style="margin-top: 32px; max-width: 800px;">
+            <h3>Submit a Support Ticket</h3>
+            <p style="font-size: 14px; color: var(--text-secondary); margin-bottom: 24px;">Send a message to our support desk and receive a trackable support ticket.</p>
+
+            <form id="supportForm" style="display: flex; flex-direction: column; gap: 18px;">
+                <div class="form-group">
+                    <label for="suppName" class="form-label">Full Name</label>
+                    <input type="text" id="suppName" class="form-input" placeholder="e.g. Naveen K" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suppEmail" class="form-label">Email Address</label>
+                    <input type="email" id="suppEmail" class="form-input" placeholder="e.g. naveen@example.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="suppDesc" class="form-label">Message / Inquiry Detail</label>
+                    <textarea id="suppDesc" class="form-textarea" placeholder="Describe your issue or feedback in detail..." required></textarea>
+                </div>
+
+                <button type="submit" class="action-btn" style="padding: 14px; font-size: 15px;">
+                    Submit Support Ticket
+                </button>
+            </form>
+        </div>
+
+    </main>
 </div>
 
+<script src="../front/app-state.js"></script>
 <script src="../buttons-js/help.js"></script>
 </body>
 </html>
+

@@ -1,235 +1,272 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="signature">
+
 <head>
     <meta charset="UTF-8">
-    <title>SkillSwap</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkillSwap | Enterprise Peer Learning & Skill Exchange</title>
+    <meta name="description"
+        content="Exchange technical skills, learn programming, share knowledge, and earn credits with peer mentors.">
     <link rel="stylesheet" href="front.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap"
+        rel="stylesheet">
 </head>
-<body>
 
-<div class="app">
+<body class="signature-mode">
 
-    <!-- SIDEBAR -->
-    <aside class="sidebar">
-        <h2 class="logo"><b>SkillSwap</b></h2>
+    <div class="app">
 
-        <a href="../buttons/post.html"><button>＋ Post</button></a>
-        <a href="../buttons/pin.html"><button>📌 Pin your favourite</button></a>
-        <a href="../buttons/projects.html"><button>📁 Projects</button></a>
-        <a href="../buttons/courses.html"><button>🎓 Courses</button></a>
-        <a href="../buttons/help.html"><button>🛟 Help & Support</button></a>
-        <a href="../buttons/logut.html"><button>⇦ Log out</button></a>
-    </aside>
+        <!-- UNIFIED SIDEBAR -->
+        <aside class="sidebar">
+            <div>
+                <a href="front.html" class="logo-container">
+                    <div class="logo-icon">SS</div>
+                    <span class="logo-text">SkillSwap</span>
+                </a>
 
-    <!-- MAIN -->
-    <main class="main">
+                <nav class="nav-menu">
+                    <a href="front.html" class="nav-item active">
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="../buttons/courses.html" class="nav-item">
+                        <span>Courses</span>
+                    </a>
+                    <a href="../buttons/projects.html" class="nav-item">
+                        <span>Projects</span>
+                    </a>
+                    <a href="../buttons/post.html" class="nav-item">
+                        <span>Post Skill</span>
+                    </a>
+                    <a href="../buttons/pin.html" class="nav-item">
+                        <span>Bookmarks</span>
+                        <span class="nav-badge" id="sidebarPinCount">0</span>
+                    </a>
+                    <a href="../buttons/ai.html" class="nav-item">
+                        <span>AI Assistant</span>
+                        <span class="nav-badge" style="background: var(--accent-rose); color: var(--text-primary); font-weight: 800;">LIVE</span>
+                    </a>
+                    <a href="../buttons/help.html" class="nav-item">
+                        <span>Support Center</span>
+                    </a>
+                    <a href="../buttons/logout.html" class="nav-item">
+                        <span>Sign Out</span>
+                    </a>
+                </nav>
+            </div>
 
-        <!-- TOP BAR -->
-        <div class="topbar">
-            <div class="top-right">
-                <div class="points">🪐 100</div>
-                <div class="profile">Ju</div>
+            <!-- User Wallet Card -->
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="userAvatar">N</div>
+                <div class="user-info">
+                    <span class="user-name" id="userName">Naveen</span>
+                    <span class="user-points-badge"><span id="sidebarPoints">120</span> Points</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- MAIN CONTENT AREA -->
+        <main class="main">
+            <!-- TOP BAR -->
+            <header class="topbar">
+                <div class="header-title-group">
+                    <h1>Skill Exchange & Learning Hub</h1>
+                    <p>Collaborative peer-to-peer technical knowledge exchange and credit economy.</p>
+                </div>
+
+                <div class="topbar-actions">
+                    <button class="daily-bonus-btn" id="dailyBonusBtn" title="Claim 15 Free Points Daily">
+                        Daily Reward (+15 Pts)
+                    </button>
+
+                    <div class="points-pill" id="userPointsPill" title="Your current SkillSwap points balance">
+                        <span id="pointsValue">120 Points</span>
+                    </div>
+
+                    <a href="../buttons/post.html" class="action-btn" style="text-decoration: none;">
+                        + Post Skill
+                    </a>
+                </div>
+            </header>
+
+            <!-- HERO DASHBOARD BANNER -->
+            <div class="hero-card" style="margin-bottom: 24px;">
+                <div class="hero-content">
+                    <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 8px;">
+                        <span style="font-size: 11px; font-weight: 800; background: var(--accent-peach); color: var(--text-primary); padding: 4px 12px; border-radius: 20px; border: 1px solid var(--border-highlight); text-transform: uppercase; letter-spacing: 0.5px;">Peer Learning Network</span>
+                        <span style="font-size: 12px; color: var(--text-secondary); font-weight: 700;">● Network Active</span>
+                    </div>
+                    <h2 class="hero-title" id="typingHeroTitle">Peer Skill Exchange & Knowledge Economy</h2>
+                    <p class="hero-desc">
+                        Access technical curriculum notes with point credits. Share expertise to earn credits, mentor peers, and collaborate on software projects.
+                    </p>
+
+                    <!-- LIVE STATS STRIP -->
+                    <div class="stats-strip">
+                        <div class="stat-item">
+                            <div>
+                                <span class="stat-number">18+</span>
+                                <span class="stat-label">Verified Courses</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div>
+                                <span class="stat-number">6+</span>
+                                <span class="stat-label">Active Projects</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div>
+                                <span class="stat-number">2,500+</span>
+                                <span class="stat-label">Points Transacted</span>
+                            </div>
+                        </div>
+                        <div class="stat-item">
+                            <div>
+                                <span class="stat-number">1,200+</span>
+                                <span class="stat-label">Active Members</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- QUICK ACTION NAVIGATION CARDS -->
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 16px; margin-bottom: 28px;">
+                <a href="../buttons/courses.html" style="text-decoration: none; background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--border-highlight)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                    <strong style="font-size: 15px; color: var(--text-primary);">Course Catalog</strong>
+                    <span style="font-size: 13px; color: var(--text-secondary);">Access technical notes and study guides with your point balance.</span>
+                </a>
+
+                <a href="../buttons/post.html" style="text-decoration: none; background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--border-highlight)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                    <strong style="font-size: 15px; color: var(--text-primary);">Share Expertise</strong>
+                    <span style="font-size: 13px; color: var(--text-secondary);">Publish mentorship listings and earn 15–50 points based on skill valuation.</span>
+                </a>
+
+                <a href="../buttons/projects.html" style="text-decoration: none; background: var(--bg-card); border: 1px solid var(--border-color); padding: 20px; border-radius: var(--radius-md); display: flex; flex-direction: column; gap: 6px; cursor: pointer; transition: all 0.2s ease;" onmouseover="this.style.borderColor='var(--border-highlight)'" onmouseout="this.style.borderColor='var(--border-color)'">
+                    <strong style="font-size: 15px; color: var(--text-primary);">Team Collaborations</strong>
+                    <span style="font-size: 13px; color: var(--text-secondary);">Contribute to open-source initiatives and claim milestone bounties.</span>
+                </a>
+            </div>
+
+            <!-- SEARCH & CATEGORY FILTER -->
+            <div class="search-filter-section">
+                <div class="search-box">
+                    <input type="text" id="skillSearchInput" class="search-input"
+                        placeholder="Search skills, topics (e.g. Python, React, SQL), or mentor name...">
+                </div>
+
+                <div class="category-pills" id="categoryPills">
+                    <button class="category-pill active" data-category="all">All Topics (18+)</button>
+                    <button class="category-pill" data-category="Tech">Computer Science</button>
+                    <button class="category-pill" data-category="Web">Web Engineering</button>
+                    <button class="category-pill" data-category="Design">Product & UI Design</button>
+                    <button class="category-pill" data-category="Database">Database Systems</button>
+                    <button class="category-pill" data-category="Tools">Cloud & DevOps</button>
+                    <button class="category-pill" data-category="Community">Community Listings</button>
+                </div>
+            </div>
+
+            <!-- MOSTLY VIEWED SKILLS -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Featured Skill Listings</h2>
+                </div>
+
+                <div class="grid" id="mostlyViewedGrid">
+                    <!-- Dynamic rendering by front.js -->
+                </div>
+            </section>
+
+            <!-- TOP RECOMMENDED COURSES -->
+            <section class="section">
+                <div class="section-header">
+                    <h2 class="section-title">Top Peer Courses</h2>
+                </div>
+
+                <div class="grid" id="topCoursesGrid">
+                    <!-- Dynamic rendering by front.js -->
+                </div>
+            </section>
+
+            <!-- LIVE ACTIVITY FEED -->
+            <section class="section" style="margin-top: 20px;">
+                <div class="section-header">
+                    <h2 class="section-title">Recent Network Activity</h2>
+                </div>
+
+                <div class="activity-feed-card" id="activityFeedList">
+                    <!-- Hydrated via front.js & app-state.js -->
+                </div>
+            </section>
+
+        </main>
+    </div>
+
+    <!-- ENROLLMENT & DETAILS MODAL -->
+    <div class="modal-overlay" id="skillModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 id="modalTitle" style="font-size: 19px; font-weight: 800;">Course Details</h3>
+                <button class="modal-close" id="modalCloseBtn">&times;</button>
+            </div>
+            <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+                <p id="modalDescription" style="color: var(--text-secondary); line-height: 1.5; font-size: 14px;"></p>
+
+                <div
+                    style="background: var(--bg-card); padding: 14px; border-radius: 12px; border: 1px solid var(--border-color); display: flex; justify-content: space-between; align-items: center;">
+                    <div>
+                        <span style="font-size: 12px; color: var(--text-muted); display: block;">Instructor / Mentor</span>
+                        <strong id="modalPartner" style="color: var(--text-primary); font-size: 15px;"></strong>
+                    </div>
+                    <div style="display: flex; gap: 8px; align-items: center;">
+                        <span id="modalViews"
+                            style="font-size: 12px; color: var(--text-secondary); background: var(--bg-main); padding: 4px 10px; border-radius: 8px; border: 1px solid var(--border-color);">2.4k Views</span>
+                        <span id="modalRating" class="rating-badge">Rating: 4.8 / 5.0</span>
+                    </div>
+                </div>
+
+                <div
+                    style="display: flex; justify-content: space-between; align-items: center; background: #FFF5F5; padding: 14px; border-radius: 12px; border: 1px solid var(--border-color);">
+                    <div>
+                        <span style="font-size: 12px; color: var(--text-secondary); display: block;">Enrollment Requirement</span>
+                        <strong id="modalCostDisplay" style="color: var(--text-primary); font-size: 17px;">20 Points</strong>
+                    </div>
+                    <span id="modalUnlockStatus"
+                        style="font-size: 13px; font-weight: 700; color: var(--text-primary);"></span>
+                </div>
+
+                <button id="modalActionBtn" class="action-btn"
+                    style="width: 100%; padding: 14px; font-size: 15px; margin-top: 8px;">
+                    Unlock & View Notes (20 Pts)
+                </button>
             </div>
         </div>
+    </div>
 
-        <!-- SEARCH BAR -->
-        <div class="post-bar">
-            <input class="input-style" type="text" id="skillTitle" placeholder="Search Here">
-            <button id="searchBtn">Search</button>
+    <!-- PEER CONNECT MESSAGE MODAL -->
+    <div class="modal-overlay" id="connectModal">
+        <div class="modal-card">
+            <div class="modal-header">
+                <h3 style="font-size: 19px; font-weight: 800;">Contact Skill Partner</h3>
+                <button class="modal-close" id="closeConnectModal">&times;</button>
+            </div>
+            <div class="modal-body" style="display: flex; flex-direction: column; gap: 16px;">
+                <p id="connectPartnerInfo" style="color: var(--text-secondary); font-size: 14px;">Send a message to schedule a peer-to-peer technical consultation.</p>
+                
+                <textarea id="connectMessageInput" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 14px; border-radius: 12px; color: var(--text-primary); min-height: 100px; outline: none; font-size: 14px;" placeholder="Write your message here..."></textarea>
 
-            <h4><b><i>
-                <span id="typeText">Welcome!!</span>
-            </i></b></h4>
+                <button id="sendConnectRequestBtn" class="action-btn" style="padding: 14px; font-size: 15px;">
+                    Send Connection Request
+                </button>
+            </div>
         </div>
+    </div>
 
-        <!-- MOSTLY VIEWED -->
-        <section>
-            <h3>Mostly viewed</h3>
-            <div class="grid">
-
-                <!-- JAVA -->
-                <a href="../notes/java.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/java-img.jpeg">
-                        <div>
-                            <h4>Java</h4>
-                            <p>Popular backend language</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Pranith</span>
-                        </div>
-                        <div class="rating">⭐ 4.6 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- PYTHON -->
-                <a href="../notes/python.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/py-img.jpeg">
-                        <div>
-                            <h4>Python</h4>
-                            <p>High-level language</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Subashini</span>
-                        </div>
-                        <div class="rating">⭐ 4.8 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- GIT -->
-                <a href="../notes/git.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/git-img.jpeg">
-                        <div>
-                            <h4>Git</h4>
-                            <p>Version control system</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Naveen</span>
-                        </div>
-                        <div class="rating">⭐ 4.5 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- C++ -->
-                <a href="../notes/cpp.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/c++.jpeg">
-                        <div>
-                            <h4>C++</h4>
-                            <p>Object oriented programming</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Shamini</span>
-                        </div>
-                        <div class="rating">⭐ 4.4 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-            </div>
-        </section>
-
-        <!-- TOP COURSES -->
-        <section>
-            <h3>Top courses</h3>
-            <div class="grid">
-
-                <!-- C -->
-                <a href="../notes/c.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/c-img.jpeg">
-                        <div>
-                            <h4>C Programming</h4>
-                            <p>Low-level programming language</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Ranjith</span>
-                        </div>
-                        <div class="rating">⭐ 3.3 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- JS -->
-                <a href="../notes/jsc.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/js-img.jpeg">
-                        <div>
-                            <h4>JavaScript</h4>
-                            <p>Web interactivity language</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Zahira shirin</span>
-                        </div>
-                        <div class="rating">⭐ 4.2 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- SQL -->
-                <a href="../notes/sql.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/sql.jpeg">
-                        <div>
-                            <h4>SQL</h4>
-                            <p>Database query language</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Pranesh</span>
-                        </div>
-                        <div class="rating">⭐ 3.6 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-                <!-- CSS -->
-                <a href="../notes/casss.html" class="card-link">
-                <div class="card">
-                    <div class="card-left">
-                        <img src="../img/css-img.jpeg">
-                        <div>
-                            <h4>CSS</h4>
-                            <p>Web page styling</p>
-                        </div>
-                    </div>
-
-                    <div class="card-right">
-                        <div class="skill-partner">
-                            Skill Partner
-                            <span>Subasri</span>
-                        </div>
-                        <div class="rating">⭐ 4.1 / 5</div>
-                    </div>
-                </div>
-                </a>
-
-            </div>
-        </section>
-
-    </main>
-</div>
-
-<script src="front.js"></script>
-<script src="test.js"></script>
+    <script src="app-state.js"></script>
+    <script src="front.js"></script>
 </body>
+
 </html>

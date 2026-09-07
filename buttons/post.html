@@ -1,45 +1,199 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="signature">
+
 <head>
-<meta charset="UTF-8">
-<title>Create Skill Post</title>
-<link rel="stylesheet" href="../buttons-css/post.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Post a Skill | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
+    <link rel="stylesheet" href="../buttons-css/post.css">
 </head>
-<body>
 
-<div class="container">
+<body class="signature-mode">
 
-  <h2>Create a Skill Post</h2>
-  <p class="sub">Share what you know. Share what you learned.</p>
+    <div class="app">
 
-  <label>What skill do you know?</label>
-  <input id="skillTitle" type="text" placeholder="Eg: Web Development, Java">
+        <!-- UNIFIED SIDEBAR -->
+        <aside class="sidebar">
+            <div>
+                <a href="../front/front.html" class="logo-container">
+                    <div class="logo-icon">SS</div>
+                    <span class="logo-text">SkillSwap</span>
+                </a>
 
-  <label>Where did you learn from it?</label>
-  <textarea id="skillDesc" placeholder="Explain your experience..."></textarea>
+                <nav class="nav-menu">
+                    <a href="../front/front.html" class="nav-item">
+                        <span>Dashboard</span>
+                    </a>
+                    <a href="courses.html" class="nav-item">
+                        <span>Courses</span>
+                    </a>
+                    <a href="projects.html" class="nav-item">
+                        <span>Projects</span>
+                    </a>
+                    <a href="post.html" class="nav-item active">
+                        <span>Post Skill</span>
+                    </a>
+                    <a href="pin.html" class="nav-item">
+                        <span>Bookmarks</span>
+                        <span class="nav-badge" id="sidebarPinCount">0</span>
+                    </a>
+                    <a href="ai.html" class="nav-item">
+                        <span>AI Assistant</span>
+                        <span class="nav-badge" style="background: var(--accent-rose); color: var(--text-primary); font-weight: 800;">LIVE</span>
+                    </a>
+                    <a href="help.html" class="nav-item">
+                        <span>Support Center</span>
+                    </a>
+                    <a href="logout.html" class="nav-item">
+                        <span>Sign Out</span>
+                    </a>
+                </nav>
+            </div>
 
-  <label>Category :</label>
-  <div class="category">
-    <button type="button" onclick="selectCategory(this,'Tech')">Tech</button>
-    <button type="button" onclick="selectCategory(this,'Design')">Design</button>
-    <button type="button" onclick="selectCategory(this,'Business')">Business</button>
-    <button type="button" onclick="selectCategory(this,'Other')">Other</button>
-  </div>
+            <div class="sidebar-user-card">
+                <div class="user-avatar" id="userAvatar">N</div>
+                <div class="user-info">
+                    <span class="user-name" id="userName">Naveen</span>
+                    <span class="user-points-badge"><span id="sidebarPoints">120</span> Points</span>
+                </div>
+            </div>
+        </aside>
 
-  <label>How do you want to share?</label>
-  <div class="share">
-    <button type="button" onclick="selectShare(this,'Teach')">Teach</button>
-    <button type="button" onclick="selectShare(this,'Mentor')">Mentor</button>
-    <button type="button" onclick="selectShare(this,'Share Notes')">Share Notes</button>
-  </div>
+        <!-- MAIN CONTENT -->
+        <main class="main">
 
-  <div class="actions">
-    <button class="clear" onclick="clearForm()">Clear</button>
-    <button class="post" onclick="postSkill()">Post Skill</button>
-  </div>
+            <header class="topbar">
+                <div class="header-title-group">
+                    <h1>Publish Technical Skill Listing</h1>
+                    <p>Offer technical mentorship or share notes to earn AI-valued reward credits.</p>
+                </div>
 
-</div>
+                <div class="topbar-actions">
+                    <div class="points-pill">
+                        <span id="pointsValue">120 Points</span>
+                    </div>
+                </div>
+            </header>
 
-<script src="../buttons-js/post.js"></script>
+            <!-- CREATE SKILL FORM CONTAINER -->
+            <div style="display: grid; grid-template-columns: 1fr 340px; gap: 24px; align-items: start;">
+                <div class="post-form-card">
+                    <form id="skillPostForm" style="display: flex; flex-direction: column; gap: 20px;">
+
+                        <div>
+                            <label class="form-label">Skill or Specialization Title</label>
+                            <input type="text" id="skillTitle" class="form-input"
+                                placeholder="e.g. React.js Architecture, Node.js REST APIs, Figma Prototyping, Machine Learning" required>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Technical Experience & Syllabus Description</label>
+                            <textarea id="skillDesc" class="form-textarea"
+                                placeholder="Detail your technical background, projects built, and the topics you can teach..."
+                                required></textarea>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Category</label>
+                            <div class="pill-group" id="categoryGroup">
+                                <button type="button" class="pill-option active" data-val="Tech">Computer Science</button>
+                                <button type="button" class="pill-option" data-val="Web">Web Engineering</button>
+                                <button type="button" class="pill-option" data-val="Design">Product & UI Design</button>
+                                <button type="button" class="pill-option" data-val="Database">Database Systems</button>
+                                <button type="button" class="pill-option" data-val="Other">+ Other Category</button>
+                            </div>
+
+                            <!-- DYNAMIC CUSTOM CATEGORY INPUT -->
+                            <div id="customCategoryContainer"
+                                style="display: none; margin-top: 14px; animation: fadeIn 0.25s ease;">
+                                <label class="form-label"
+                                    style="font-size: 13px; color: var(--text-primary); font-weight: 700;">Specify Custom Domain</label>
+                                <input type="text" id="customCategoryInput" class="form-input"
+                                    placeholder="e.g. Cybersecurity, Distributed Systems, Cloud Architecture...">
+                            </div>
+                        </div>
+
+                        <div>
+                            <label class="form-label">Topic Tags</label>
+                            <div style="display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 8px;">
+                                <span class="tag-chip" data-tag="Beginners Welcome" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; font-weight: 600;">+ Beginners Welcome</span>
+                                <span class="tag-chip" data-tag="Live Mentoring" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; font-weight: 600;">+ Live Mentoring</span>
+                                <span class="tag-chip" data-tag="Code Reviews" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; font-weight: 600;">+ Code Reviews</span>
+                                <span class="tag-chip" data-tag="Free Study Notes" style="background: var(--bg-card); border: 1px solid var(--border-color); padding: 4px 10px; border-radius: 12px; font-size: 12px; cursor: pointer; font-weight: 600;">+ Free Study Notes</span>
+                            </div>
+                            <input type="text" id="customTagsInput" class="form-input"
+                                placeholder="e.g. Beginners Welcome, Hands-On, Free Notes, Live Q&A">
+                        </div>
+
+                        <!-- LIVE AI POINT VALUATION WIDGET -->
+                        <div class="ai-valuation-card" id="aiValuationCard">
+                            <div class="ai-valuation-header">
+                                <div class="ai-badge">
+                                    <span>Real-Time Valuation Engine</span>
+                                    <span class="ai-tier-pill" id="aiTierBadge">Standard</span>
+                                </div>
+                                <div class="ai-score-display">
+                                    <span id="aiLiveScore">20</span> <small>Pts</small>
+                                </div>
+                            </div>
+                            <div class="ai-subscores" id="aiSubscores">
+                                <span class="ai-subscore-pill" id="subComplexity">Depth: 5/25</span>
+                                <span class="ai-subscore-pill" id="subClarity">Clarity: 5/15</span>
+                                <span class="ai-subscore-pill" id="subDemand">Demand: 10/15</span>
+                            </div>
+                            <div class="ai-reasoning" id="aiReasoning">
+                                Type a skill title and clear description to calculate verified reward points...
+                            </div>
+                            <div class="ai-tips" id="aiTips">
+                                Tip: Detailed descriptions with code topics or prerequisites earn +10 bonus points.
+                            </div>
+                            <div class="ai-meter-bg">
+                                <div class="ai-meter-fill" id="aiMeterFill" style="width: 25%;"></div>
+                            </div>
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="button" class="clear-btn" id="clearBtn">Reset Form</button>
+                            <button type="submit" class="action-btn" id="publishBtn" style="padding: 14px 28px; font-size: 15px;">Publish Skill Listing (+ <span id="btnPointVal">20</span> Pts)</button>
+                        </div>
+
+                    </form>
+                </div>
+
+                <!-- LIVE PREVIEW CARD -->
+                <div>
+                    <span style="font-size: 13px; font-weight: 800; color: var(--text-muted); display: block; margin-bottom: 10px;">CARD PREVIEW:</span>
+                    <div class="card" id="livePreviewCard" style="border-color: var(--border-highlight);">
+                        <div class="card-top">
+                            <div class="card-badge-group">
+                                <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">COMMUNITY</span>
+                                <div class="card-title-area">
+                                    <h3 id="prevTitle">Skill Title</h3>
+                                    <p id="prevDesc">Description will appear here as you type...</p>
+                                    <span id="prevTag" style="font-size: 11px; background: #FFF5F5; color: var(--text-secondary); padding: 3px 10px; border-radius: 12px; font-weight: 700; margin-top: 6px; display: inline-block; border: 1px solid var(--border-color);">Community Listing</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="card-footer">
+                            <div class="partner-info">
+                                <span class="partner-label" id="prevCat">Tech</span>
+                                <span class="partner-name">By Naveen</span>
+                            </div>
+                            <div class="card-actions">
+                                <span id="prevPoints" style="font-size: 13px; color: var(--text-primary); font-weight: 800;">+25 Pts</span>
+                                <button class="action-btn" style="padding: 8px 14px; font-size: 13px;" disabled>Connect</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script src="../front/app-state.js"></script>
+    <script src="../buttons-js/post.js"></script>
 </body>
+
 </html>

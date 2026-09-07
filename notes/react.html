@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>React.js Mastery Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1> React.js Mastery – Components, Hooks & Architecture</h1>
+        <p>Master Virtual DOM, JSX Syntax, useState, useEffect, Custom Hooks & Context API</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Ananya</strong></span>
+            <span>Rating: <strong>4.9 / 5</strong></span>
+            <span>Read Time: <strong>9 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Virtual DOM & Reconciliation</h2>
+    <p>React uses an in-memory <strong>Virtual DOM</strong> tree representation. When component state changes, React constructs a new Virtual DOM tree, performs efficient diffing against the previous tree using the Fiber algorithm, and updates only changed DOM nodes.</p>
+
+    <ul>
+        <li><strong>Declarative UI:</strong> You define how the UI should look for a given state, and React handles DOM updates.</li>
+        <li><strong>Batching:</strong> Multiple state updates inside event handlers are automatically batched to minimize re-renders.</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>CourseCounter.jsx</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>import React, { useState } from 'react';
+
+export function CourseCounter({ initialPoints = 120 }) {
+    const [points, setPoints] = useState(initialPoints);
+
+    const unlockCourse = () => {
+        setPoints(prev => Math.max(0, prev - 20));
+    };
+
+    return (
+        &lt;div className="wallet-card"&gt;
+            &lt;h3&gt;Points Wallet: {points} Pts&lt;/h3&gt;
+            &lt;button onClick={unlockCourse}&gt;Unlock Course (-20 Pts)&lt;/button&gt;
+        &lt;/div&gt;
+    );
+}</code></pre>
+    </div>
+
+    <h2>2. Side Effects & Lifecycle with useEffect</h2>
+    <p>The <code>useEffect</code> hook lets you execute side effects such as fetching backend API data, subscribing to global events, or updating page titles after rendering.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>UseFetchCourses.jsx</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>import React, { useState, useEffect } from 'react';
+
+export function CourseList() {
+    const [courses, setCourses] = useState([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        let isMounted = true;
+
+        async function loadCourses() {
+            try {
+                const res = await fetch('/api/courses');
+                const data = await res.json();
+                if (isMounted) setCourses(data);
+            } finally {
+                if (isMounted) setLoading(false);
+            }
+        }
+
+        loadCourses();
+        return () => { isMounted = false; }; // Cleanup subscription
+    }, []); // Empty dependency array runs once on mount
+
+    if (loading) return &lt;p&gt;Loading Skill Swap Courses...&lt;/p&gt;;
+    return &lt;div&gt;{courses.length} Courses Available&lt;/div&gt;;
+}</code></pre>
+    </div>
+
+    <h2>3. Global State Management with Context API</h2>
+    <p>React's Context API passes state down the component tree without manually threading props (prop drilling) at every level.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>ThemeContext.jsx</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>import React, { createContext, useContext, useState } from 'react';
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+    const [theme, setTheme] = useState('dark');
+    const toggleTheme = () => setTheme(prev => prev === 'dark' ? 'light' : 'dark');
+
+    return (
+        &lt;ThemeContext.Provider value={{ theme, toggleTheme }}&gt;
+            {children}
+        &lt;/ThemeContext.Provider&gt;
+    );
+}
+
+export const useTheme = () => useContext(ThemeContext);</code></pre>
+    </div>
+
+    <h2>4. Performance Optimization: useMemo & React.memo</h2>
+    <p>Prevent expensive calculations and unnecessary child re-renders by wrapping heavy functions in <code>useMemo</code> and components in <code>React.memo</code>.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which React hook handles asynchronous side effects like API fetching?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) useState</button>
+            <button class="quiz-option-btn" data-correct="true">B) useEffect</button>
+            <button class="quiz-option-btn" data-correct="false">C) useMemo</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Machine Learning & AI Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Machine Learning & AI – Models & Neural Networks</h1>
+        <p>Master Supervised Learning, Regression, Classification, Deep Learning & AI Point Valuation Engines</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Swetha</strong></span>
+            <span>Rating: <strong>4.9 / 5</strong></span>
+            <span>Read Time: <strong>9 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Machine Learning Pipeline & Paradigms</h2>
+    <p>Machine Learning enables systems to learn from data patterns without being explicitly programmed.</p>
+
+    <ul>
+        <li><strong>Supervised Learning:</strong> Training models on labeled datasets (e.g. Linear Regression, Random Forest).</li>
+        <li><strong>Unsupervised Learning:</strong> Finding hidden structures in unlabeled data (e.g. K-Means Clustering, PCA).</li>
+        <li><strong>Reinforcement Learning:</strong> Agent learning optimal decision policies via rewards and penalties.</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>ai_valuation.py</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code># AI Point Valuation Algorithm Model
+def calculate_ai_point_value(complexity_score, instructor_rating, category):
+    base_points = 15
+    
+    # Complexity Weighting
+    base_points += complexity_score * 4
+    
+    # Rating Weighting
+    if instructor_rating >= 4.8:
+        base_points += 10
+    elif instructor_rating >= 4.5:
+        base_points += 5
+        
+    return int(base_points)
+
+print("AI Calculated Course Cost:", calculate_ai_point_value(5, 4.9, "Tech")) # 45 Pts</code></pre>
+    </div>
+
+    <h2>2. Neural Networks & Deep Learning Architecture</h2>
+    <p>Deep Neural Networks consist of Input, Hidden, and Output layers connected by trainable weights and non-linear activation functions (ReLU, Sigmoid, Softmax).</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which machine learning paradigm trains models using labeled input-output pairs?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="true">A) Supervised Learning</button>
+            <button class="quiz-option-btn" data-correct="false">B) Unsupervised Learning</button>
+            <button class="quiz-option-btn" data-correct="false">C) Reinforcement Learning</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

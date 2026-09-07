@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Tutor & Learning Hub | SkillSwap</title>
+    <link rel="stylesheet" href="../front/front.css">
+    <link rel="stylesheet" href="../buttons-css/ai.css">
+</head>
+<body class="light-mode">
+
+<div class="app">
+
+    <!-- UNIFIED SIDEBAR -->
+    <aside class="sidebar">
+        <div>
+            <a href="../front/front.html" class="logo-container">
+                <div class="logo-icon">SS</div>
+                <span class="logo-text">SkillSwap</span>
+            </a>
+
+            <nav class="nav-menu">
+                <a href="../front/front.html" class="nav-item">
+                    <span>Dashboard</span>
+                </a>
+                <a href="courses.html" class="nav-item">
+                    <span>Courses</span>
+                </a>
+                <a href="projects.html" class="nav-item">
+                    <span>Projects</span>
+                </a>
+                <a href="post.html" class="nav-item">
+                    <span>Post Skill</span>
+                </a>
+                <a href="pin.html" class="nav-item">
+                    <span>Bookmarks</span>
+                    <span class="nav-badge" id="sidebarPinCount">0</span>
+                </a>
+                <a href="ai.html" class="nav-item active">
+                    <span>AI Assistant</span>
+                    <span class="nav-badge" style="background: var(--accent-indigo); color: #fff; font-weight: 700;">PRO</span>
+                </a>
+                <a href="help.html" class="nav-item">
+                    <span>Support</span>
+                </a>
+                <a href="logout.html" class="nav-item">
+                    <span>Sign Out</span>
+                </a>
+            </nav>
+        </div>
+
+        <div class="sidebar-user-card">
+            <div class="user-avatar" id="userAvatar">N</div>
+            <div class="user-info">
+                <span class="user-name" id="userName">Naveen</span>
+                <span class="user-points-badge"><span id="sidebarPoints">120</span> Pts</span>
+            </div>
+        </div>
+    </aside>
+
+    <!-- MAIN CONTENT -->
+    <main class="main">
+
+        <!-- TOPBAR -->
+        <header class="topbar">
+            <div class="header-title-group">
+                <h1>AI Learning Assistant</h1>
+                <p>Instant technical guidance, code explanation and skill evaluation powered by Llama 3.3 70B</p>
+            </div>
+
+            <div class="topbar-actions">
+                <div class="points-pill">
+                    <span id="pointsValue">120 Points</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- AI HERO HUB HEADER -->
+        <div class="ai-hero-card">
+            <div>
+                <div style="display: flex; gap: 10px; margin-bottom: 8px;">
+                    <span class="hero-badge">TECHNICAL ASSISTANT</span>
+                    <span class="hero-badge" style="background: rgba(74, 74, 74, 0.1); color: var(--text-primary);">ONLINE</span>
+                </div>
+                <h2 style="font-size: 22px; font-weight: 800; color: var(--text-primary); margin: 0;">SkillSwap AI Personal Learning Assistant</h2>
+                <p style="font-size: 14px; color: var(--text-secondary); margin-top: 6px;">Ask programming questions, request architectural guidance, or optimize your SkillSwap learning journey.</p>
+            </div>
+        </div>
+
+        <!-- QUICK PROMPT PRESETS -->
+        <div class="quick-prompts-container">
+            <span style="font-size: 13px; font-weight: 800; color: var(--text-muted); display: block; margin-bottom: 10px;">RECOMMENDED PROMPTS:</span>
+            <div class="quick-prompts-grid">
+                <button class="prompt-chip" data-prompt="Explain JavaScript Promises vs Async/Await with clean code examples.">
+                    Promises vs Async/Await
+                </button>
+                <button class="prompt-chip" data-prompt="Give me a 4-step beginner learning roadmap for React.js and Node.js.">
+                    React & Node Roadmap
+                </button>
+                <button class="prompt-chip" data-prompt="How can I earn 100+ points fast on SkillSwap by posting skills and joining projects?">
+                    Points Earning Strategy
+                </button>
+                <button class="prompt-chip" data-prompt="Give me 3 fullstack web app project ideas with Python and JavaScript.">
+                    Fullstack Project Ideas
+                </button>
+            </div>
+        </div>
+
+        <!-- CHAT CONVERSATION CONTAINER -->
+        <div class="chat-container">
+            <div class="chat-header">
+                <span style="font-weight: 800; color: var(--text-primary); font-size: 15px;">Conversation History</span>
+                <div style="display: flex; gap: 8px;">
+                    <button class="clear-chat-btn" id="exportChatBtn" style="border: 1px solid var(--border-color); background: var(--bg-card); color: var(--text-primary);">Export Transcript</button>
+                    <button class="clear-chat-btn" id="clearChatBtn">Clear Chat</button>
+                </div>
+            </div>
+
+            <div class="chat-messages" id="chatMessages">
+                <!-- Welcome Message -->
+                <div class="message ai-message">
+                    <div class="message-avatar">AI</div>
+                    <div class="message-content">
+                        <strong>SkillSwap AI Assistant</strong>
+                        <p>Hello <span id="chatUserName">Naveen</span>. I am your dedicated SkillSwap Technical Learning Assistant. How can I assist with your software engineering or peer learning today?</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CHAT INPUT FORM -->
+            <form id="aiChatForm" class="chat-input-wrapper">
+                <input type="text" id="aiChatInput" class="chat-input" placeholder="Type your technical question or topic here..." required autocomplete="off">
+                <button type="submit" class="chat-send-btn" id="aiSendBtn">
+                    Send Question
+                </button>
+            </form>
+        </div>
+
+    </main>
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="../buttons-js/ai.js"></script>
+</body>
+</html>
+

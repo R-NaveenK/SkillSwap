@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Cyber Security Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1> Cyber Security – Web Pentesting & Defense</h1>
+        <p>Master OWASP Top 10 Vulnerabilities, Cryptography, Secure Headers & Authentication Architecture</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Arjun</strong></span>
+            <span>Rating: <strong>4.9 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. OWASP Top 10 Web Vulnerabilities</h2>
+    <p>Web security focuses on preventing unauthorized access, data breaches, and systemic exploits.</p>
+
+    <ul>
+        <li><strong>Injection (SQLi / NoSQLi):</strong> Malicious input alters query logic. Mitigated by parameterized queries and ORMs.</li>
+        <li><strong>Cross-Site Scripting (XSS):</strong> Malicious script injection into rendered HTML. Mitigated by context-aware escaping & CSP headers.</li>
+        <li><strong>Broken Authentication:</strong> Weak session cookies or unhashed passwords. Mitigated by Bcrypt hashing & JWT expiration.</li>
+    </ul>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>secure_password.js</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>const bcrypt = require('bcrypt');
+
+async function hashUserPassword(plainPassword) {
+    const saltRounds = 12;
+    const hashedPassword = await bcrypt.hash(plainPassword, saltRounds);
+    return hashedPassword; // Secure salted hash
+}
+
+async function verifyLogin(inputPassword, storedHash) {
+    return await bcrypt.compare(inputPassword, storedHash);
+}</code></pre>
+    </div>
+
+    <h2>2. Cryptography: Hashing vs Encryption</h2>
+    <p><strong>Hashing</strong> (SHA-256, Bcrypt) is one-way deterministic mathematical transformation used for passwords and integrity checks. <strong>Encryption</strong> (AES-256) is two-way reversible mathematical transformation requiring secret keys.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>Which defensive coding practice prevents SQL Injection attacks?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) Client-Side Form Validation</button>
+            <button class="quiz-option-btn" data-correct="true">B) Parameterized Queries & Prepared Statements</button>
+            <button class="quiz-option-btn" data-correct="false">C) Disabling CORS headers</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>

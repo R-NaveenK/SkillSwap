@@ -1,100 +1,62 @@
-* {
-    box-sizing: border-box;
-    font-family: "Segoe UI", Arial, sans-serif;
-}
-
-body {
-    margin: 0;
-    background: #f4efe6;
-    height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-}
-
-/* WRAPPER */
-.login-wrapper {
-    width: 100%;
-    display: flex;
-    justify-content: center;
-}
-
-/* CARD */
+/* Login & Signup Page Styling - Signature Palette */
 .login-card {
-    width: 360px;
-    background: #faf7f1;
-    padding: 32px;
-    border-radius: 22px;
-    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-    text-align: center;
-    animation: fadeIn 0.6s ease;
+    background: #FFFFFF;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-xl);
+    padding: 40px;
+    width: 90%;
+    max-width: 440px;
+    box-shadow: var(--shadow-md);
 }
 
 .login-card h2 {
-    margin: 0 0 8px;
+    font-size: 24px;
+    font-weight: 800;
+    text-align: center;
+    color: var(--text-primary);
 }
 
-.login-card p {
-    color: #666;
-    font-size: 14px;
-    margin-bottom: 22px;
-}
-
-/* INPUTS */
-.login-card input {
+.form-input {
     width: 100%;
-    padding: 14px 16px;
-    margin-bottom: 14px;
-    border-radius: 12px;
-    border: none;
-    outline: none;
-    background: #fff;
-    box-shadow: inset 0 0 0 1px #ddd;
-    font-size: 14px;
-}
-
-.login-card input:focus {
-    box-shadow: 0 0 0 2px rgba(214,183,124,0.4);
-}
-
-/* BUTTON */
-.login-card button {
-    width: 100%;
+    background: #FFF5F5;
+    border: 1px solid var(--border-color);
     padding: 14px;
-    border-radius: 14px;
-    border: none;
-    background: linear-gradient(135deg, #d6b77c, #caa45d);
-    color: white;
-    font-weight: 600;
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    outline: none;
+    font-size: 14px;
+    transition: all 0.2s ease;
+}
+
+.form-input:focus {
+    border-color: var(--border-highlight);
+    background: #FFFFFF;
+    box-shadow: var(--shadow-glow);
+}
+
+.demo-btn {
+    background: #F7D6D0 !important;
+    color: var(--text-primary) !important;
+    border: 1px solid var(--border-highlight) !important;
+    border-radius: 20px !important;
+    font-weight: 700 !important;
+    transition: all 0.2s ease;
+}
+
+.demo-btn:hover {
+    background: var(--accent-rose) !important;
+    transform: scale(1.05);
+}
+
+.avatar-opt {
+    background: #FFF5F5;
+    border: 2px solid var(--border-color);
     cursor: pointer;
-    margin-top: 10px;
+    transition: all 0.2s ease;
 }
 
-.login-card button:hover {
-    transform: translateY(-1px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.15);
-}
-
-/* SIGNUP */
-.signup-text {
-    margin-top: 18px;
-    font-size: 13px;
-}
-
-.signup-text a {
-    text-decoration: none;
-    color: #b08a3e;
-    font-weight: 600;
-}
-
-/* ANIMATION */
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(15px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.avatar-opt.active {
+    border-color: var(--border-highlight) !important;
+    background: #F7D6D0 !important;
+    transform: scale(1.1);
 }

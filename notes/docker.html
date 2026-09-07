@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Docker & Kubernetes Notes | SkillSwap</title>
+<link rel="stylesheet" href="notes.css">
+</head>
+<body class="notes-body light-mode">
+
+<div class="notes-container">
+
+    <div class="notes-topbar">
+        <a href="../front/front.html" class="back-link">
+            ← Back to SkillSwap Dashboard
+        </a>
+        <button class="theme-toggle-btn" id="themeToggleBtn" title="Toggle Light/Night Theme">🌙</button>
+    </div>
+
+    <header class="reader-header">
+        <h1>Docker & Kubernetes – Containerization & DevOps</h1>
+        <p>Master Container Images, Dockerfiles, Multi-Stage Builds, Docker Compose & Kubernetes Pods</p>
+        <div class="reader-meta">
+            <span>Skill Partner: <strong>Harish</strong></span>
+            <span>Rating: <strong>4.8 / 5</strong></span>
+            <span>Read Time: <strong>8 mins</strong></span>
+        </div>
+    </header>
+
+    <h2>1. Containers vs Virtual Machines</h2>
+    <p><strong>Containers</strong> package application code and its exact runtime dependencies into isolated OS user-space instances. Unlike virtual machines, containers share the host Linux kernel, booting in milliseconds with lightweight resource overhead.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>Dockerfile</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code># Multi-Stage Build Dockerfile for Node.js Application
+FROM node:18-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+
+FROM node:18-alpine AS runner
+WORKDIR /app
+COPY --from=builder /app ./
+EXPOSE 3000
+CMD ["node", "server.js"]</code></pre>
+    </div>
+
+    <h2>2. Docker Compose for Multi-Service Orchestration</h2>
+    <p>Docker Compose manages multi-container application stacks (Node API, MongoDB, Redis) via a declarative <code>docker-compose.yml</code> manifest.</p>
+
+    <div class="code-block-wrapper">
+        <div class="code-header">
+            <span>docker-compose.yml</span>
+            <button class="copy-code-btn">Copy</button>
+        </div>
+        <pre><code>version: '3.8'
+
+services:
+  app:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - MONGO_URI=mongodb://db:27017/skillswap
+    depends_on:
+      - db
+
+  db:
+    image: mongo:6.0
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:</code></pre>
+    </div>
+
+    <h2>3. Kubernetes Architecture Overview</h2>
+    <p>Kubernetes automates deployment, scaling, and operation of application containers across clusters using Pods, Deployments, Services, and Ingress controllers.</p>
+
+    <div class="quiz-section">
+        <h3>Knowledge Check (+10 Points)</h3>
+        <p>What component does Docker share with the host operating system, making containers lightweight?</p>
+
+        <div class="quiz-options">
+            <button class="quiz-option-btn" data-correct="false">A) Hypervisor</button>
+            <button class="quiz-option-btn" data-correct="true">B) OS Kernel</button>
+            <button class="quiz-option-btn" data-correct="false">C) Virtual Disk Image</button>
+        </div>
+    </div>
+
+    <div class="rating-section">
+        <h3>Rate this Learning Content</h3>
+
+        <div class="rating-stars">
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+            <span class="rating-star">★</span>
+        </div>
+
+        <p id="ratingText"></p>
+    </div>
+
+</div>
+
+<script src="../front/app-state.js"></script>
+<script src="rating.js"></script>
+</body>
+</html>
