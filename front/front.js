@@ -300,11 +300,11 @@ function renderDashboard() {
             userCard.innerHTML = `
                 <div class="card-top">
                     <div class="card-badge-group">
-                        <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">COMMUNITY</span>
+                        <span style="font-size: 11px; font-weight: 800; background: #C4E1E6; color: #1E2D33; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">COMMUNITY</span>
                         <div class="card-title-area">
                             <h3>${skill.title}</h3>
                             <p>${skill.description}</p>
-                            ${skill.customTags ? `<span style="font-size: 11px; background: #FFF5F5; color: var(--text-secondary); padding: 3px 10px; border-radius: 12px; font-weight: 700; margin-top: 6px; display: inline-block; border: 1px solid var(--border-color);">${skill.customTags}</span>` : ''}
+                            ${skill.customTags ? `<span style="font-size: 11px; background: #F4FAF8; color: var(--text-secondary); padding: 3px 10px; border-radius: 12px; font-weight: 700; margin-top: 6px; display: inline-block; border: 1px solid var(--border-color);">${skill.customTags}</span>` : ''}
                         </div>
                     </div>
                 </div>
@@ -435,7 +435,7 @@ function createCardHTML(item, isPinned, isUnlocked) {
     card.innerHTML = `
         <div class="card-top">
             <div class="card-badge-group">
-                <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${item.tag || 'TECH'}</span>
+                <span style="font-size: 11px; font-weight: 800; background: #C4E1E6; color: #1E2D33; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${item.tag || 'TECH'}</span>
                 <div class="card-title-area">
                     <h3>${item.title}</h3>
                     <p>${item.subtitle}</p>

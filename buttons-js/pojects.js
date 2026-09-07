@@ -63,7 +63,7 @@ function renderProjects() {
             <div class="card-top">
                 <div class="card-title-area">
                     <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px;">
-                        <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${proj.category}</span>
+                        <span style="font-size: 11px; font-weight: 800; background: #C4E1E6; color: #1E2D33; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${proj.category}</span>
                         <span class="project-reward-badge" style="font-size: 13px; color: var(--text-primary); font-weight: 800;">Bounty: +${proj.points} Pts</span>
                     </div>
                     <h3>${proj.title}</h3>

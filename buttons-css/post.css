@@ -87,8 +87,8 @@
 
 /* AI Live Valuation Card */
 .ai-valuation-card {
-    background: #FFF5F5;
-    border: 1px solid #F7D6D0;
+    background: #F4FAF8;
+    border: 1px solid #C4E1E6;
     border-radius: var(--radius-lg);
     padding: 20px 24px;
     display: flex;
@@ -96,14 +96,14 @@
     gap: 12px;
     transition: all 0.3s ease;
     position: relative;
-    box-shadow: 0 4px 15px rgba(74, 74, 74, 0.04);
+    box-shadow: 0 4px 15px rgba(30, 45, 51, 0.04);
 }
 
 .ai-valuation-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    border-bottom: 1px solid #F7D6D0;
+    border-bottom: 1px solid #C4E1E6;
     padding-bottom: 10px;
 }
 
@@ -119,7 +119,7 @@
 }
 
 .ai-tier-pill {
-    background: #F7D6D0;
+    background: #C4E1E6;
     color: var(--text-primary);
     font-size: 11px;
     padding: 3px 10px;
@@ -148,7 +148,7 @@
 
 .ai-subscore-pill {
     background: #FFFFFF;
-    border: 1px solid #F7D6D0;
+    border: 1px solid #C4E1E6;
     color: var(--text-secondary);
     font-size: 12px;
     padding: 4px 10px;
@@ -171,7 +171,7 @@
 .ai-meter-bg {
     width: 100%;
     height: 8px;
-    background: #F7D6D0;
+    background: #C4E1E6;
     border-radius: 4px;
     overflow: hidden;
 }

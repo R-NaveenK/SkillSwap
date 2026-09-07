@@ -1,6 +1,6 @@
 /* =======================================================
    SKILLSWAP NOTES & LEARNING READER - SIGNATURE PALETTE
-   Palette: #FFF5F5 | #F7D6D0 | #E2B4BD | #4A4A4A
+   Palette: #8DBCC7 | #A4CCD9 | #C4E1E6
    ======================================================= */
 @import url('../front/front.css');
 
@@ -25,7 +25,7 @@
 
 .back-link {
     color: var(--text-primary);
-    background: #F7D6D0;
+    background: #C4E1E6;
     padding: 8px 16px;
     border-radius: 20px;
     border: 1px solid var(--border-highlight);
@@ -39,7 +39,7 @@
 }
 
 .back-link:hover {
-    background: var(--accent-rose);
+    background: var(--border-highlight);
     transform: translateX(-4px);
 }
 
@@ -50,14 +50,14 @@
     left: 0;
     right: 0;
     height: 5px;
-    background: #F7D6D0;
+    background: #C4E1E6;
     z-index: 1000;
 }
 
 .reading-progress-bar {
     height: 100%;
     width: 0%;
-    background: var(--accent-rose);
+    background: var(--accent-indigo);
     transition: width 0.1s ease;
 }
 
@@ -146,8 +146,8 @@ code {
     font-family: 'Fira Code', Consolas, Monaco, monospace !important;
     font-size: 16px !important;
     font-weight: 600 !important;
-    color: #4A4A4A !important;
-    background: #F7D6D0 !important;
+    color: #1E2D33 !important;
+    background: #C4E1E6 !important;
     border: 1px solid var(--border-highlight) !important;
     padding: 3px 8px !important;
     border-radius: 6px !important;
@@ -160,8 +160,8 @@ code {
     padding: 22px 28px !important;
     margin: 26px 0 !important;
     border-radius: var(--radius-md) !important;
-    background: #4A4A4A !important;
-    color: #FFF5F5 !important;
+    background: #1E2D33 !important;
+    color: #F4FAF8 !important;
     font-size: 16px !important;
     line-height: 1.65 !important;
     box-shadow: var(--shadow-sm);
@@ -171,7 +171,7 @@ code {
 .code-block-wrapper {
     position: relative;
     margin: 26px 0 32px !important;
-    background: #4A4A4A !important;
+    background: #1E2D33 !important;
     border: 1px solid #333 !important;
     border-radius: var(--radius-md) !important;
     overflow: hidden;
@@ -179,7 +179,7 @@ code {
 }
 
 .code-header {
-    background: #383838 !important;
+    background: #2C3E45 !important;
     padding: 10px 20px !important;
     display: flex;
     justify-content: space-between;
@@ -187,14 +187,14 @@ code {
     font-family: 'Fira Code', monospace;
     font-size: 13px !important;
     font-weight: 600;
-    color: #E2B4BD !important;
-    border-bottom: 1px solid #4F4F4F !important;
+    color: #A4CCD9 !important;
+    border-bottom: 1px solid #3A525B !important;
 }
 
 .copy-code-btn {
-    background: #E2B4BD !important;
+    background: #8DBCC7 !important;
     border: none;
-    color: #4A4A4A !important;
+    color: #FFFFFF !important;
     font-size: 12px !important;
     font-weight: 800 !important;
     padding: 5px 12px !important;
@@ -204,7 +204,7 @@ code {
 }
 
 .copy-code-btn:hover {
-    background: #F7D6D0 !important;
+    background: #A4CCD9 !important;
 }
 
 .code-block-wrapper pre {
@@ -213,7 +213,7 @@ code {
     font-family: 'Fira Code', Consolas, monospace !important;
     font-size: 16px !important;
     line-height: 1.65 !important;
-    color: #FFF5F5 !important;
+    color: #F4FAF8 !important;
     overflow-x: auto;
 }
 
@@ -222,7 +222,7 @@ code {
     border: none !important;
     padding: 0 !important;
     font-size: 16px !important;
-    color: #FFF5F5 !important;
+    color: #F4FAF8 !important;
 }
 
 /* Rating Section */
@@ -292,7 +292,7 @@ code {
 
 .quiz-option-btn {
     width: 100%;
-    background: #FFF5F5;
+    background: #F4FAF8;
     border: 1px solid var(--border-color);
     color: var(--text-primary);
     padding: 16px 20px !important;
@@ -307,7 +307,7 @@ code {
 
 .quiz-option-btn:hover {
     border-color: var(--border-highlight);
-    background: #F7D6D0;
+    background: #C4E1E6;
 }
 
 .quiz-option-btn.correct {
@@ -317,7 +317,7 @@ code {
 }
 
 .quiz-option-btn.wrong {
-    background: rgba(226, 180, 189, 0.45) !important;
-    border-color: var(--accent-rose) !important;
+    background: rgba(141, 188, 199, 0.3) !important;
+    border-color: #8DBCC7 !important;
     color: var(--text-primary) !important;
 }

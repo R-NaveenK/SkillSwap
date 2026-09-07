@@ -634,10 +634,10 @@ const AppState = {
         toast.innerHTML = message;
         toast.style.cssText = `
             background: #FFFFFF;
-            color: #4A4A4A;
+            color: #1E2D33;
             backdrop-filter: blur(16px);
-            border: 1px solid #E2B4BD;
-            box-shadow: 0 10px 30px rgba(74, 74, 74, 0.12);
+            border: 1px solid #A4CCD9;
+            box-shadow: 0 10px 30px rgba(30, 45, 51, 0.12);
             padding: 14px 22px;
             border-radius: 14px;
             font-family: 'Plus Jakarta Sans', system-ui, sans-serif;
@@ -653,8 +653,8 @@ const AppState = {
         `;
 
         if (type === "error") {
-            toast.style.borderColor = "#E2B4BD";
-            toast.style.background = "#FFF5F5";
+            toast.style.borderColor = "#8DBCC7";
+            toast.style.background = "#F4FAF8";
         }
 
         toastContainer.appendChild(toast);

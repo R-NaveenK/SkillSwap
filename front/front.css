@@ -1,6 +1,6 @@
 /* =======================================================
    SKILLSWAP GLOBAL DESIGN SYSTEM - SIGNATURE PALETTE
-   Palette: #FFF5F5 (Bg) | #F7D6D0 (Soft) | #E2B4BD (Rose) | #4A4A4A (Charcoal)
+   Palette: #8DBCC7 (Deep Teal) | #A4CCD9 (Soft Teal) | #C4E1E6 (Ice Teal)
    ======================================================= */
 
 @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
@@ -14,39 +14,39 @@
     --glass-backdrop: blur(16px);
 
     /* Signature Color Tokens */
-    --bg-main: #FFF5F5;
+    --bg-main: #F4FAF9;
     --bg-card: #FFFFFF;
-    --bg-card-hover: #FFF0F0;
+    --bg-card-hover: #EBF7F7;
     --bg-sidebar: #FFFFFF;
-    --bg-topbar: rgba(255, 245, 245, 0.95);
-    --border-color: #F7D6D0;
-    --border-highlight: #E2B4BD;
+    --bg-topbar: rgba(244, 250, 249, 0.95);
+    --border-color: #C4E1E6;
+    --border-highlight: #A4CCD9;
 
-    /* Charcoal Typography for Crisp Contrast */
-    --text-primary: #4A4A4A;
-    --text-secondary: #6B6B6B;
-    --text-muted: #8E8E8E;
+    /* Deep Teal Slate Typography for Crisp Contrast */
+    --text-primary: #1E2D33;
+    --text-secondary: #4A636C;
+    --text-muted: #7A96A0;
 
     /* Theme Accents */
-    --accent-indigo: #E2B4BD;
-    --accent-violet: #D89FA9;
-    --accent-cyan: #C98290;
+    --accent-indigo: #8DBCC7;
+    --accent-violet: #A4CCD9;
+    --accent-cyan: #8DBCC7;
     --accent-emerald: #5C8C6C;
-    --accent-amber: #D88B97;
-    --accent-rose: #E2B4BD;
-    --accent-peach: #F7D6D0;
-    --accent-charcoal: #4A4A4A;
+    --accent-amber: #A4CCD9;
+    --accent-rose: #8DBCC7;
+    --accent-peach: #C4E1E6;
+    --accent-charcoal: #1E2D33;
 
     /* Gradients */
-    --gradient-primary: linear-gradient(135deg, #E2B4BD 0%, #F7D6D0 100%);
-    --gradient-glow: linear-gradient(135deg, rgba(226, 180, 189, 0.35), rgba(247, 214, 208, 0.35));
-    --gradient-gold: linear-gradient(135deg, #E2B4BD 0%, #F7D6D0 100%);
-    --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #FFF8F8 100%);
+    --gradient-primary: linear-gradient(135deg, #8DBCC7 0%, #A4CCD9 100%);
+    --gradient-glow: linear-gradient(135deg, rgba(141, 188, 199, 0.35), rgba(164, 204, 217, 0.35));
+    --gradient-gold: linear-gradient(135deg, #8DBCC7 0%, #C4E1E6 100%);
+    --gradient-card: linear-gradient(135deg, #FFFFFF 0%, #F5FAFA 100%);
 
     /* Shadows */
-    --shadow-sm: 0 4px 14px rgba(74, 74, 74, 0.06);
-    --shadow-md: 0 10px 30px rgba(74, 74, 74, 0.09);
-    --shadow-glow: 0 0 20px rgba(226, 180, 189, 0.4);
+    --shadow-sm: 0 4px 14px rgba(30, 45, 51, 0.06);
+    --shadow-md: 0 10px 30px rgba(30, 45, 51, 0.09);
+    --shadow-glow: 0 0 20px rgba(141, 188, 199, 0.4);
 }
 
 /* Base Styles */
@@ -65,8 +65,8 @@ body {
     display: flex;
     overflow-x: hidden;
     background-image:
-        radial-gradient(circle at 15% 15%, rgba(247, 214, 208, 0.5) 0%, transparent 45%),
-        radial-gradient(circle at 85% 85%, rgba(226, 180, 189, 0.35) 0%, transparent 45%);
+        radial-gradient(circle at 15% 15%, rgba(196, 225, 230, 0.5) 0%, transparent 45%),
+        radial-gradient(circle at 85% 85%, rgba(164, 204, 217, 0.35) 0%, transparent 45%);
     background-attachment: fixed;
 }
 
@@ -173,7 +173,7 @@ body {
 
 .nav-badge {
     margin-left: auto;
-    background: #F7D6D0;
+    background: #C4E1E6;
     color: var(--text-primary);
     font-size: 11px;
     font-weight: 800;
@@ -291,7 +291,7 @@ body {
 }
 
 .points-pill {
-    background: #F7D6D0;
+    background: #C4E1E6;
     color: var(--text-primary);
     font-weight: 800;
     font-size: 14px;
@@ -306,7 +306,7 @@ body {
 
 /* Daily Bonus Banner / Pill */
 .daily-bonus-btn {
-    background: #F7D6D0;
+    background: #C4E1E6;
     border: 1px solid var(--border-highlight);
     color: var(--text-primary);
     font-size: 13px;
@@ -527,7 +527,7 @@ body {
     width: 48px;
     height: 48px;
     border-radius: 12px;
-    background: #FFF5F5;
+    background: #F4FAF8;
     border: 1px solid var(--border-color);
     display: flex;
     align-items: center;
@@ -599,18 +599,18 @@ body {
 }
 
 .rating-badge {
-    background: #F7D6D0;
+    background: #C4E1E6;
     color: var(--text-primary);
     padding: 4px 10px;
     border-radius: 12px;
     font-size: 12px;
     font-weight: 800;
-    border: 1px solid rgba(226, 180, 189, 0.4);
+    border: 1px solid rgba(164, 204, 217, 0.4);
 }
 
 .action-btn {
-    background: var(--accent-rose);
-    color: var(--text-primary);
+    background: #8DBCC7;
+    color: #FFFFFF;
     border: 1px solid var(--border-highlight);
     padding: 9px 18px;
     border-radius: 10px;
@@ -618,7 +618,7 @@ body {
     font-weight: 800;
     cursor: pointer;
     transition: all 0.2s ease;
-    box-shadow: 0 4px 12px rgba(226, 180, 189, 0.35);
+    box-shadow: 0 4px 12px rgba(141, 188, 199, 0.35);
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -627,7 +627,7 @@ body {
 
 .action-btn:hover {
     transform: scale(1.04);
-    background: #D89FA9;
+    background: #A4CCD9;
     box-shadow: var(--shadow-glow);
 }
 
@@ -655,7 +655,7 @@ body {
 
 .activity-icon {
     font-size: 20px;
-    background: #F7D6D0;
+    background: #C4E1E6;
     padding: 8px;
     border-radius: 10px;
 }

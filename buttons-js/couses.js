@@ -81,11 +81,11 @@ function renderCourses() {
             card.innerHTML = `
                 <div class="card-top">
                     <div class="card-badge-group">
-                        <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">COMMUNITY</span>
+                        <span style="font-size: 11px; font-weight: 800; background: #C4E1E6; color: #1E2D33; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">COMMUNITY</span>
                         <div class="card-title-area">
                             <h3>${skill.title}</h3>
                             <p>${skill.description}</p>
-                            <span style="display: inline-block; font-size: 11px; font-weight: 800; background: #FFF5F5; color: var(--text-primary); padding: 3px 8px; border-radius: 10px; margin-top: 6px; border: 1px solid var(--border-color);">Value: ${skill.aiPoints || 30} Pts</span>
+                            <span style="display: inline-block; font-size: 11px; font-weight: 800; background: #F4FAF8; color: var(--text-primary); padding: 3px 8px; border-radius: 10px; margin-top: 6px; border: 1px solid var(--border-color);">Value: ${skill.aiPoints || 30} Pts</span>
                         </div>
                     </div>
                 </div>
@@ -138,7 +138,7 @@ function renderCourses() {
             card.innerHTML = `
                 <div class="card-top">
                     <div class="card-badge-group">
-                        <span style="font-size: 11px; font-weight: 800; background: #F7D6D0; color: #4A4A4A; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${course.tag || 'TECH'}</span>
+                        <span style="font-size: 11px; font-weight: 800; background: #C4E1E6; color: #1E2D33; padding: 4px 8px; border-radius: 6px; letter-spacing: 0.5px;">${course.tag || 'TECH'}</span>
                         <div class="card-title-area">
                             <h3>${course.title}</h3>
                             <p>${course.desc}</p>
